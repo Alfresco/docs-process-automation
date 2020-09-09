@@ -1,12 +1,12 @@
-# Content Automation Service documentation
+# Alfresco Process Automation documentation
 
-This repository contains the documentation for Alfresco Content Automation Service. This documentation repository is: 
+This repository contains the documentation for Alfresco Process Automation. This documentation repository is: 
 
 * A **Work in Progress**: see [DOCS-5977](https://issues.alfresco.com/jira/browse/DOCS-5977) for documentation updates. 
 
-* **Temporary**: the content in this repository will be moved to the documentation site for CAS release. 
+* **Temporary**: the content in this repository will be moved to the documentation site for release. 
 
-* **Internal**: the content here is for internal use only until CAS release. 
+* **Internal**: the content here is for internal use only until release. 
 
 ## Contributions
 
