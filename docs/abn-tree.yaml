@@ -1,0 +1,37 @@
+- model:
+    title: 'Model'
+    children:
+        - projects.md: 'Projects'
+        - projects:
+            title: 'Projects'
+            children:
+              - bpmn.md: 'BPMN'
+              - events.md: 'Engine events'
+        - forms.md: 'Forms'
+        - connectors:
+            title: 'Connectors'
+            children:
+              - content.md: 'Content connector'
+              - generate.md: 'Generate a document'
+              - docusign.md: 'DocuSign'
+              - email.md: 'Email'
+              - rest.md: 'REST'
+              - aws.md: 'Amazon Web Services'
+              - slack.md: 'Slack'
+              - twilio.md: 'Twilio'
+              - salesforce.md: 'Salesforce'
+        - decisions.md: 'Decision tables'
+        - interfaces.md: 'User interfaces'
+        - files.md: 'Files'
+        - scripts.md: 'Scripts'
+        - triggers.md: 'Triggers'
+        - content-models.md: 'Content models'
+- admin:
+  title: 'Administer'
+  children:
+    - release.md: 'Project deployment'
+    - monitor.md: 'Process administration'
+    - users.md: 'Users and groups'
+    - architecture.md: 'Architecture'
+- using: 'Using'
+- develop: 'Develop'
