@@ -20,9 +20,7 @@ The types of start event are:
 
 ### Start event
 
-Start events are where the trigger is unspecified for starting a process. The trigger can be using a form, manually through the Digital Workspace, using the REST API or from a [trigger]({% link process-automation/latest/model/triggers.md %}).
-
-{% capture start-prop %}
+Start events are where the trigger is unspecified for starting a process. The trigger can be using a form, manually through the Digital Workspace, using the REST API or from a [trigger](../triggers.md).
 
 #### Basic properties
 
@@ -36,21 +34,19 @@ The basic properties for a start event are:
 
 #### Form name
 
-An optional [form]({% link process-automation/latest/model/forms.md %}) can be used to begin a process. The form must exist within the same project as the process definition to be selected. Select a form from the dropdown, else create a new form using the **+** symbol.
+An optional [form](../forms.md}) can be used to begin a process. The form must exist within the same project as the process definition to be selected. Select a form from the dropdown, else create a new form using the **+** symbol.
 
 Once a form has been selected, it can be edited using the **Open Form** symbol.
 
 #### Mapping type
 
-The mapping type sets how data is passed between the start event and the process. There are [five options](%{ link process-automation/latest/model/processes/index.md %}#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
+The mapping type sets how data is passed between the start event and the process. There are [five options](README.md#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
 
-{% endcapture %}
-{% capture start-img %}
+#### Display
 
 Start events are displayed as a single thin circle without an icon inside.
 
-{% endcapture %}
-{% capture start-xml %}
+#### XML
 
 An example of the XML of a start event without a form defined is:
 
@@ -70,15 +66,9 @@ An example of the XML of a start event with a form defined is:
 
 **Note**: The `activiti:formKey` is the `id` of the form used to start the process.
 
-{% endcapture %}
-
-{% include tabs.html tableid="start" opt1="Properties" content1=start-prop opt2="Appearance" content2=start-img opt3="XML" content3=start-xml %}
-
 ### Error start event
 
 Error start events can only be used in [event sub-processes](#event-sub-processes). They begin an event sub-processes when a named error is received.
-
-{% capture error-start-prop %}
 
 #### Basic properties
 
@@ -92,20 +82,17 @@ The basic properties for an error start event are:
 
 #### Form name
 
-An optional [form]({% link process-automation/latest/model/forms.md %}) can be used to begin a process. The form must exist within the same project as the process definition to be selected. Select a form from the dropdown, else create a new form using the **+** symbol.
+An optional [form]../forms.md) can be used to begin a process. The form must exist within the same project as the process definition to be selected. Select a form from the dropdown, else create a new form using the **+** symbol.
 
 Once a form has been selected, it can be edited using the **Open Form** symbol.
 
 #### Mapping type
 
-The mapping type sets how data is passed between the error start event and the process. There are [five options](%{ link process-automation/latest/model/processes/index.md %}#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
+The mapping type sets how data is passed between the error start event and the process. There are [five options](README.md#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
 
 #### Error
 
 An error needs to be defined for the error start event to catch. A previously created **Error** can be selected from the dropdown in its properties, or a new one created using the **+** symbol. An **Error name** and **Error code** can then be set.
-
-{% endcapture %}
-{% capture error %}
 
 Error events are used to model an exception in a business process. Errors are thrown by error end events and caught by error start events and error boundary events.
 
@@ -115,13 +102,11 @@ Error events are displayed as a lightning bolt icon inside different shapes that
 
 To create a new error use the **+** symbol against an error event such as a start error event, or make sure no BPMN element is selected by clicking on a blank section of the process canvas and the **Edit Errors** button will be visible in the right-hand properties panel.
 
-{% endcapture %}
-{% capture error-start-img %}
+#### Display
 
 Error start events are displayed as a single thin circle with a hollow lightning bolt icon inside.
 
-{% endcapture %}
-{%capture error-start-xml %}
+#### XML
 
 An example of the XML of an error start event is:
 
@@ -137,15 +122,9 @@ An example of the XML of an error is:
 <bpmn2:error id="Error_0vbkbeb" name="payment-failed-error" errorCode="404" />
 ```
 
-{% endcapture %}
-
-{% include tabs.html tableid="error-start" opt1="Properties" content1=error-start-prop opt2="Error" content2=error opt3="Appearance" content3=error-start-img opt4="XML" content4=error-start-xml %}
-
 ### Message start event
 
 Message start events begin a process instance when a named message is received.
-
-{% capture message-start-prop %}
 
 #### Basic properties
 
@@ -159,22 +138,17 @@ The basic properties for a message start event are:
 
 #### Form name
 
-An optional [form]({% link process-automation/latest/model/forms.md %}) can be used to begin a process. The form must exist within the same project as the process definition to be selected. Select a form from the dropdown, else create a new form using the **+** symbol.
+An optional [form](../forms.md) can be used to begin a process. The form must exist within the same project as the process definition to be selected. Select a form from the dropdown, else create a new form using the **+** symbol.
 
 Once a form has been selected, it can be edited using the **Open Form** symbol.
 
 #### Mapping type
 
-The mapping type sets how data is passed between the message start event and the process. There are [five options](%{ link process-automation/latest/model/processes/index.md %}#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
+The mapping type sets how data is passed between the message start event and the process. There are [five options](README.md#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
 
 #### Message
 
 A message needs to be defined for the message start event to catch when it is thrown. A previously created **Message** can be selected from the dropdown in its properties, or a new one created using the **+** symbol. A **Message name** and payload can then be set.
-
-{% endcapture %}
-{% capture message %}
-
-#### Message
 
 Messages have a name and contain a payload. They are sent by message throwing events and received by message catching events in a 1:1 relationship between throw events and catch events. Messages contain a payload known as a message payload and can be passed between scopes, for example between two different process definitions within the same diagram that are separated by different [pools](#pools-and-lanes).
 
@@ -196,7 +170,7 @@ Message payloads can only be created on a message throw event and contain one or
 | Integer | A positive whole number, for example `642` |
 | Boolean | A value of either `true` or `false` |
 | Date | A specific date in the format `YYYY-MM-DD`, for example `2020-04-22` |
-| Variable | A value passed from a [process variable]({% link process-automation/latest/model/processes/index.md %}#process-variables). |
+| Variable | A value passed from a [process variable](README.md#process-variables). |
 
 The receiving message catch event is then used to map the received values in the payload to process variables in its own scope.
 
@@ -206,7 +180,7 @@ Message payload mappings can be viewed in the **Extensions Editor** of a process
 
 Message events can optionally contain a correlation key. If a correlation key is present then when a message is thrown it uses the `activiti:correlationKey` value and the `messageRef` of the throwing event to match against the same two properties in a catching event. If only one property is matched then the message will not be caught.
 
-Using a [process variable]({% link process-automation/latest/model/processes/index.md %}#process-variables) for the correlation key in a throwing event and a static value for its corresponding catching event allows for the message to only be caught in specific circumstances.
+Using a [process variable](README.md#process-variables) for the correlation key in a throwing event and a static value for its corresponding catching event allows for the message to only be caught in specific circumstances.
 
 **Note**: Message start events cannot contain a correlation key unless they are used in a [sub process](#sub-processes-and-call-activities).
 
@@ -214,13 +188,11 @@ Using a [process variable]({% link process-automation/latest/model/processes/ind
 
 When messages are used between two different [pools](#pools-and-lanes) the sequence flow that connects them is a dotted line called a message flow. The message flow is part of the `collaboration` element in the XML created by introducing a pool. Message flows reference the throwing message event as the `sourceRef` and the catching message event as the `targetRef`.
 
-{% endcapture %}
-{% capture message-start-img %}
+#### Display
 
 Message start events are displayed as a single thin circle with a hollow envelope icon inside.
 
-{% endcapture %}
-{% capture message-start-xml %}
+#### XML
 
 An example of the XML of a message start event is:
 
@@ -276,15 +248,9 @@ An example of the XML of a message flow is:
 </bpmn2:collaboration>
 ```
 
-{% endcapture %}
-
-{% include tabs.html tableid="message-start" opt1="Properties" content1=message-start-prop opt2="Message" content2=message opt3="Appearance" content3=message-start-img opt4="XML" content4=message-start-xml %}
-
 ### Signal start event
 
 Signal start events begin a process instance using a caught, named signal.
-
-{% capture signal-start-prop %}
 
 #### Basic properties
 
@@ -302,22 +268,17 @@ A signal needs to be defined for the signal start event to catch. A previously u
 
 Signals can be restricted to the process instance they are thrown in, or be global in scope. The scope of a global signal is restricted to the project they are used in.
 
-{% endcapture %}
-{% capture signal %}
-
 Signal events can be either catching or throwing. A throwing signal event will emit a signal when it is reached in a process instance that will be picked up by any catching signal event with a matching signal name. Signals can be restricted to the process instance they are thrown in, or be global in scope. The scope of a global signal is restricted to the project they are used in.
 
 The `id` of a signal will match against the `signalRef` of a catching or throwing event.
 
 Signal events are displayed as a triangle icon inside different shapes that differentiate between the event types. A solid triangle represents a throwing event, whilst a hollow triangle represents a catching event.
 
-{% endcapture %}
-{% capture signal-start-img %}
+#### Display
 
 Signal start events are displayed as a single thin circle with a hollow triangle icon inside.
 
-{% endcapture %}
-{% capture signal-start-xml %}
+#### XML
 
 An example of the XML of a signal start event is:
 
@@ -340,15 +301,9 @@ An example of the XML of a signal with a process instance scope is:
 <bpmn2:signal id="Signal_0hnsd2r" name="Signal_0hnsd2r" activiti:scope="processInstance" />
 ```
 
-{% endcapture %}
-
-{% include tabs.html tableid="signal-start" opt1="Properties" content1=signal-start-prop opt2="Signal" content2=signal opt3="Appearance" content3=signal-start-img opt4="XML" content4=signal-start-xml %}
-
 ### Timer start event
 
 Timer start events begin a process at a specific time once or repeatedly at intervals.
-
-{% capture timer-start-prop %}
 
 #### Basic properties
 
@@ -360,22 +315,19 @@ The basic properties for a timer start event are:
 | Name | *Optional.* The name of the timer start event. This will be displayed on the canvas. |
 | Documentation | *Optional.* A free text description of what the timer start event does. |
 
-### Form name
+#### Form name
 
-An optional [form]({% link process-automation/latest/model/forms.md %}) can be used to begin a process. The form must exist within the same project as the process definition to be selected. Select a form from the dropdown, else create a new form using the **+** symbol.
+An optional [form](../forms.md) can be used to begin a process. The form must exist within the same project as the process definition to be selected. Select a form from the dropdown, else create a new form using the **+** symbol.
 
 Once a form has been selected, it can be edited using the **Open Form** symbol.
 
 #### Mapping type
 
-The mapping type sets how data is passed between the timer start event and the process. There are [five options](%{ link process-automation/latest/model/processes/index.md %}#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
+The mapping type sets how data is passed between the timer start event and the process. There are [five options](README.md#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
 
 #### Timer
 
 A choice of timer must be set for timer start events, based on a **Cycle**, **Date** or **Duration**.
-
-{% endcapture %}
-{% capture timer %}
 
 Timer events are used to influence events at specific times, after a set amount of time has passed or at intervals. All timer events use the international standard [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) for specifying time formats.
 
@@ -431,13 +383,11 @@ An optional end date can also be set after the duration and separated by a `/`.
 
 [Cron expressions](https://en.wikipedia.org/wiki/Cron#CRON_expression) can also be used to define repeating triggers for timer events.  
 
-{% endcapture %}
-{% capture timer-start-img %}
+#### Display
 
 Timer start events are displayed as a single thin circle with a clock icon inside.
 
-{% endcapture %}
-{% capture timer-start-xml %}
+#### XML
 
 An example of the XML of a timer start event is:
 
@@ -490,10 +440,6 @@ An example of the XML for `timeCycle` using a cron expression is:
 
 **Note**: This represents a trigger firing every 5 minutes beginning at the top of the hour.
 
-{% endcapture %}
-
-{% include tabs.html tableid="timer-start" opt1="Properties" content1=timer-start-prop opt2="Timer" content2=timer opt3="Appearance" content3=timer-start-img opt4="XML" content4=timer-start-xml %}
-
 ## End events
 
 End events indicate where the current process flow ends, therefore there can be no outgoing [sequence flow](#sequence-flow) from an end event. Different types of end event can have have actions other than just ending the process flow execution path.
@@ -509,8 +455,6 @@ The types of end event are:
 
 End events complete the process flow with no additional behavior.
 
-{% capture end-prop %}
-
 #### Basic properties
 
 The basic properties for an end event are:
@@ -521,13 +465,11 @@ The basic properties for an end event are:
 | Name | *Optional.* The name of the end event. This will be displayed on the canvas. |
 | Documentation | *Optional.* A free text description of what the end event does. |
 
-{% endcapture %}
-{% capture end-img %}
+#### Display
 
 End events are displayed as a single thick circle without an icon inside.
 
-{% endcapture %}
-{% capture end-xml %}
+#### XML
 
 An example of the XML of an end event is:
 
@@ -537,15 +479,9 @@ An example of the XML of an end event is:
 </bpmn2:endEvent>
 ```
 
-{% endcapture %}
-
-{% include tabs.html tableid="end" opt1="Properties" content1=end-prop opt2="Appearance" content2=end-img opt3="XML" content3=end-xml %}
-
 ### Error end event
 
 Error end events throw an error when the process flow reaches them.
-
-{% capture error-end-prop %}
 
 #### Basic properties
 
@@ -561,13 +497,19 @@ The basic properties for an error end event are:
 
 An error needs to be defined for the error end event to throw. A previously created **Error** can be selected from the dropdown in its properties, or a new one created using the **+** symbol. An **Error name** and **Error code** can then be set.
 
-{% endcapture %}
-{% capture error-end-img %}
+Error events are used to model an exception in a business process. Errors are thrown by error end events and caught by error start events and error boundary events.
+
+The `errorRef` property in the `errorEventDefinition` of an error event element will match against the `id` of an error when viewing the **XML Editor**.
+
+Error events are displayed as a lightning bolt icon inside different shapes that differentiate between the event types. A solid lightning bolt represents a throwing event, whilst a hollow lightning bolt represents a catching event.
+
+To create a new error use the **+** symbol against an error event such as a start error event, or make sure no BPMN element is selected by clicking on a blank section of the process canvas and the **Edit Errors** button will be visible in the right-hand properties panel.
+
+#### Display
 
 Error end events are displayed as a single thick circle with a solid lightning bolt icon inside.
 
-{% endcapture %}
-{% capture error-end-xml %}
+#### XML
 
 An example of the XML of an error end event is:
 
@@ -584,15 +526,9 @@ An example of the XML of an error is:
 <bpmn2:error id="Error_3vbkafg" name="payment-failed-error" errorCode="404" />
 ```
 
-{% endcapture %}
-
-{% include tabs.html tableid="error-end" opt1="Properties" content1=error-end-prop opt2="Error" content2=error opt3="Appearance" content3=error-end-img opt4="XML" content4=error-end-xml %}
-
 ### Message end event
 
 Message end events complete the process flow and send a message event.
-
-{% capture message-end-prop %}
 
 #### Basic properties
 
@@ -608,13 +544,49 @@ The basic properties for a message end event are:
 
 A message needs to be defined for the message end event to send. A previously created **Message** can be selected from the dropdown in its properties, or a new one created using the **+** symbol. A **Message name** and payload can then be set.
 
-{% endcapture %}
-{% capture message-end-img %}
+Messages have a name and contain a payload. They are sent by message throwing events and received by message catching events in a 1:1 relationship between throw events and catch events. Messages contain a payload known as a message payload and can be passed between scopes, for example between two different process definitions within the same diagram that are separated by different [pools](#pools-and-lanes).
+
+The message `id` property of a message is matched against the `messageRef` property in the corresponding throw and catch message elements when viewing the **XML Editor**.
+
+To create a new message use the **+** symbol against a message event such as a message boundary event, or make sure no BPMN element is selected by clicking on a blank section of the process canvas and the **Edit Messages** button will be visible in the right-hand properties panel.
+
+Message events are displayed as an envelope icon inside different shapes that differentiate between the event types. A solid envelope represents a throwing event, whilst a hollow envelope represents a catching event.
+
+#### Message payloads
+
+Message payloads contain a set of values that are sent from a throwing event and received by a catching event.
+
+Message payloads can only be created on a message throw event and contain one or more properties that have a `name`, `type` and `value`. The property types for payloads are:
+
+| Type | Description |
+| ---- | ----------- |
+| String | A sequence of characters, for example `#Mint-Ice-Cream-4!` |
+| Integer | A positive whole number, for example `642` |
+| Boolean | A value of either `true` or `false` |
+| Date | A specific date in the format `YYYY-MM-DD`, for example `2020-04-22` |
+| Variable | A value passed from a [process variable](README.md#process-variables). |
+
+The receiving message catch event is then used to map the received values in the payload to process variables in its own scope.
+
+Message payload mappings can be viewed in the **Extensions Editor** of a process diagram. Throwing events are mapped as `inputs` and catching events are mapped as `outputs` from an event.
+
+#### Correlation keys
+
+Message events can optionally contain a correlation key. If a correlation key is present then when a message is thrown it uses the `activiti:correlationKey` value and the `messageRef` of the throwing event to match against the same two properties in a catching event. If only one property is matched then the message will not be caught.
+
+Using a [process variable](README.md#process-variables) for the correlation key in a throwing event and a static value for its corresponding catching event allows for the message to only be caught in specific circumstances.
+
+**Note**: Message start events cannot contain a correlation key unless they are used in a [sub process](#sub-processes-and-call-activities).
+
+#### Message flows
+
+When messages are used between two different [pools](#pools-and-lanes) the sequence flow that connects them is a dotted line called a message flow. The message flow is part of the `collaboration` element in the XML created by introducing a pool. Message flows reference the throwing message event as the `sourceRef` and the catching message event as the `targetRef`.
+
+#### Display
 
 Message end events are displayed as a single thick circle with a solid envelope icon inside.
 
-{% endcapture %}
-{% capture message-end-xml %}
+#### XML
 
 An example of the XML of a message end event is:
 
@@ -670,15 +642,9 @@ An example of the XML of a message flow is:
 </bpmn2:collaboration>
 ```
 
-{% endcapture %}
-
-{% include tabs.html tableid="message-end" opt1="Properties" content1=message-end-prop opt2="Message" content2=message opt3="Appearance" content3=message-end-img opt4="XML" content4=message-end-xml %}
-
 ### Terminate end event
 
 Terminate end events cause the current process scope to be immediately ended, including any parallel process flows. The scope is determined by the location of the terminate end event. If the terminate end event is in a [sub-process](#expanded-and-collapsed-sub-processes) or [call activity](#call-activity), only the sub-process or call activity instance will be ended, not the parent or originating process instance. In the case of a multi-instance sub-process or call activity only a single instance will be ended.
-
-{% capture terminate-end-prop %}
 
 #### Basic properties
 
@@ -690,13 +656,11 @@ The basic properties for a terminate end event are:
 | Name | *Optional.* The name of the terminate end event. This will be displayed on the canvas. |
 | Documentation | *Optional.* A free text description of what the terminate end event does. |
 
-{% endcapture %}
-{% capture terminate-end-img %}
+#### Display
 
 Terminate end events are displayed as a single thick circle with a solid circle inside.
 
-{% endcapture %}
-{% capture terminate-end-xml %}
+#### XML
 
 An example of the XML of a terminate end event is:
 
@@ -706,10 +670,6 @@ An example of the XML of a terminate end event is:
 	<bpmn2:terminateEventDefinition id="TerminateEventDefinition_0j911ut"/>
 </bpmn2:endEvent>
 ```
-
-{% endcapture %}
-
-{% include tabs.html tableid="terminate-end" opt1="Properties" content1=terminate-end-prop opt2="Appearance" content2=terminate-end-img opt3="XML" content3=terminate-end-xml %}
 
 ## Intermediate events
 
@@ -727,8 +687,6 @@ The types of intermediate event are:
 
 Message intermediate catching events cause the process flow to wait until the message named in the `messageRef` property is received before it proceeds.
 
-{% capture message-int-cat-prop %}
-
 #### Basic properties
 
 The basic properties for a message intermediate catch event are:
@@ -743,13 +701,49 @@ The basic properties for a message intermediate catch event are:
 
 A message needs to be defined for the message intermediate catch event to catch. A previously created **Message** can be selected from the dropdown in its properties, or a new one created using the **+** symbol. A **Message name** and payload can then be set.
 
-{% endcapture %}
-{% capture message-int-cat-img %}
+Messages have a name and contain a payload. They are sent by message throwing events and received by message catching events in a 1:1 relationship between throw events and catch events. Messages contain a payload known as a message payload and can be passed between scopes, for example between two different process definitions within the same diagram that are separated by different [pools](#pools-and-lanes).
+
+The message `id` property of a message is matched against the `messageRef` property in the corresponding throw and catch message elements when viewing the **XML Editor**.
+
+To create a new message use the **+** symbol against a message event such as a message boundary event, or make sure no BPMN element is selected by clicking on a blank section of the process canvas and the **Edit Messages** button will be visible in the right-hand properties panel.
+
+Message events are displayed as an envelope icon inside different shapes that differentiate between the event types. A solid envelope represents a throwing event, whilst a hollow envelope represents a catching event.
+
+#### Message payloads
+
+Message payloads contain a set of values that are sent from a throwing event and received by a catching event.
+
+Message payloads can only be created on a message throw event and contain one or more properties that have a `name`, `type` and `value`. The property types for payloads are:
+
+| Type | Description |
+| ---- | ----------- |
+| String | A sequence of characters, for example `#Mint-Ice-Cream-4!` |
+| Integer | A positive whole number, for example `642` |
+| Boolean | A value of either `true` or `false` |
+| Date | A specific date in the format `YYYY-MM-DD`, for example `2020-04-22` |
+| Variable | A value passed from a [process variable](README.md#process-variables). |
+
+The receiving message catch event is then used to map the received values in the payload to process variables in its own scope.
+
+Message payload mappings can be viewed in the **Extensions Editor** of a process diagram. Throwing events are mapped as `inputs` and catching events are mapped as `outputs` from an event.
+
+#### Correlation keys
+
+Message events can optionally contain a correlation key. If a correlation key is present then when a message is thrown it uses the `activiti:correlationKey` value and the `messageRef` of the throwing event to match against the same two properties in a catching event. If only one property is matched then the message will not be caught.
+
+Using a [process variable](README.md#process-variables) for the correlation key in a throwing event and a static value for its corresponding catching event allows for the message to only be caught in specific circumstances.
+
+**Note**: Message start events cannot contain a correlation key unless they are used in a [sub process](#sub-processes-and-call-activities).
+
+#### Message flows
+
+When messages are used between two different [pools](#pools-and-lanes) the sequence flow that connects them is a dotted line called a message flow. The message flow is part of the `collaboration` element in the XML created by introducing a pool. Message flows reference the throwing message event as the `sourceRef` and the catching message event as the `targetRef`.
+
+#### Display
 
 Message intermediate catching events are displayed as two thin concentric circles with a hollow envelope icon inside.
 
-{% endcapture %}
-{% capture message-int-cat-xml %}
+#### XML
 
 An example of the XML of a message intermediate catch events is:
 
@@ -806,15 +800,9 @@ An example of the XML of a message flow is:
 </bpmn2:collaboration>
 ```
 
-{% endcapture %}
-
-{% include tabs.html tableid="message-int-cat" opt1="Properties" content1=message-int-cat-prop opt2="Message" content2=message opt3="Appearance" content3=message-int-cat-img opt4="XML" content4=message-int-cat-xml %}
-
 ### Message intermediate throw event
 
 Message intermediate throw events send the message event named in the `messageRef` property when the process flow reaches them.
-
-{% capture message-int-thro-prop %}
 
 #### Basic properties
 
@@ -830,13 +818,49 @@ The basic properties for a message intermediate throw event are:
 
 A message needs to be defined for the message intermediate throw event to catch. A previously created **Message** can be selected from the dropdown in its properties, or a new one created using the **+** symbol. A **Message name** and payload can then be set.
 
-{% endcapture %}
-{% capture message-int-thro-img %}
+Messages have a name and contain a payload. They are sent by message throwing events and received by message catching events in a 1:1 relationship between throw events and catch events. Messages contain a payload known as a message payload and can be passed between scopes, for example between two different process definitions within the same diagram that are separated by different [pools](#pools-and-lanes).
+
+The message `id` property of a message is matched against the `messageRef` property in the corresponding throw and catch message elements when viewing the **XML Editor**.
+
+To create a new message use the **+** symbol against a message event such as a message boundary event, or make sure no BPMN element is selected by clicking on a blank section of the process canvas and the **Edit Messages** button will be visible in the right-hand properties panel.
+
+Message events are displayed as an envelope icon inside different shapes that differentiate between the event types. A solid envelope represents a throwing event, whilst a hollow envelope represents a catching event.
+
+#### Message payloads
+
+Message payloads contain a set of values that are sent from a throwing event and received by a catching event.
+
+Message payloads can only be created on a message throw event and contain one or more properties that have a `name`, `type` and `value`. The property types for payloads are:
+
+| Type | Description |
+| ---- | ----------- |
+| String | A sequence of characters, for example `#Mint-Ice-Cream-4!` |
+| Integer | A positive whole number, for example `642` |
+| Boolean | A value of either `true` or `false` |
+| Date | A specific date in the format `YYYY-MM-DD`, for example `2020-04-22` |
+| Variable | A value passed from a [process variable](README.md#process-variables). |
+
+The receiving message catch event is then used to map the received values in the payload to process variables in its own scope.
+
+Message payload mappings can be viewed in the **Extensions Editor** of a process diagram. Throwing events are mapped as `inputs` and catching events are mapped as `outputs` from an event.
+
+#### Correlation keys
+
+Message events can optionally contain a correlation key. If a correlation key is present then when a message is thrown it uses the `activiti:correlationKey` value and the `messageRef` of the throwing event to match against the same two properties in a catching event. If only one property is matched then the message will not be caught.
+
+Using a [process variable](README.md#process-variables) for the correlation key in a throwing event and a static value for its corresponding catching event allows for the message to only be caught in specific circumstances.
+
+**Note**: Message start events cannot contain a correlation key unless they are used in a [sub process](#sub-processes-and-call-activities).
+
+#### Message flows
+
+When messages are used between two different [pools](#pools-and-lanes) the sequence flow that connects them is a dotted line called a message flow. The message flow is part of the `collaboration` element in the XML created by introducing a pool. Message flows reference the throwing message event as the `sourceRef` and the catching message event as the `targetRef`.
+
+#### Display
 
 Message intermediate throwing events are displayed as two thin concentric circles with a solid envelope icon inside.
 
-{% endcapture %}
-{% capture message-int-thro-xml %}
+#### XML
 
 An example of the XML of a message intermediate throw events is:
 
@@ -893,15 +917,9 @@ An example of the XML of a message flow is:
 </bpmn2:collaboration>
 ```
 
-{% endcapture %}
-
-{% include tabs.html tableid="message-int-thro" opt1="Properties" content1=message-int-thro-prop opt2="Message" content2=message opt3="Appearance" content3=message-int-thro-img opt4="XML" content4=message-int-thro-xml %}
-
 ### Signal intermediate catch event
 
 Signal intermediate catching events cause the process flow to wait until the signal named in the `signalRef` property is received before it proceeds.
-
-{% capture signal-int-cat-prop %}
 
 #### Basic properties
 
@@ -919,13 +937,17 @@ A signal needs to be defined for the signal intermediate catch event to catch. A
 
 Signals can be restricted to the process instance they are thrown in, or be global in scope. The scope of a global signal is restricted to the project they are used in.
 
-{% endcapture %}
-{% capture signal-int-cat-img %}
+Signal events can be either catching or throwing. A throwing signal event will emit a signal when it is reached in a process instance that will be picked up by any catching signal event with a matching signal name. Signals can be restricted to the process instance they are thrown in, or be global in scope. The scope of a global signal is restricted to the project they are used in.
+
+The `id` of a signal will match against the `signalRef` of a catching or throwing event.
+
+Signal events are displayed as a triangle icon inside different shapes that differentiate between the event types. A solid triangle represents a throwing event, whilst a hollow triangle represents a catching event.
+
+#### Display
 
 Signal intermediate catching events are displayed as two thin concentric circles with a hollow triangle icon inside.
 
-{% endcapture %}
-{% capture signal-int-cat-xml %}
+#### XML
 
 An example of the XML of a signal intermediate catch events is:
 	
@@ -949,15 +971,9 @@ An example of the XML of a signal with a process instance scope is:
 <bpmn2:signal id="Signal_0hnsd2r" name="Signal_0hnsd2r" activiti:scope="processInstance" />
 ```
 
-{% endcapture %}
-
-{% include tabs.html tableid="signal-int-cat" opt1="Properties" content1=signal-int-cat-prop opt2="Signal" content2=signal opt3="Appearance" content3=signal-int-cat-img opt4="XML" content4=signal-int-cat-xml %}
-
 ### Signal intermediate throw event
 
 Signal intermediate throw events are events that emit a signal when they are reached in the process flow. The signal that is emitted is then caught by any catching signal events with a name matching the signal that was thrown.
-
-{% capture signal-int-thro-prop %}
 
 #### Basic properties
 
@@ -975,13 +991,17 @@ A signal needs to be defined for the signal intermediate throw event to emit whe
 
 Signals can be restricted to the process instance they are thrown in, or be global in scope. The scope of a global signal is restricted to the project they are used in.
 
-{% endcapture %}
-{% capture signal-int-thro-img %}
+Signal events can be either catching or throwing. A throwing signal event will emit a signal when it is reached in a process instance that will be picked up by any catching signal event with a matching signal name. Signals can be restricted to the process instance they are thrown in, or be global in scope. The scope of a global signal is restricted to the project they are used in.
+
+The `id` of a signal will match against the `signalRef` of a catching or throwing event.
+
+Signal events are displayed as a triangle icon inside different shapes that differentiate between the event types. A solid triangle represents a throwing event, whilst a hollow triangle represents a catching event.
+
+#### Display
 
 Signal intermediate throw events are displayed as two thin concentric circles with a solid triangle icon inside.
 
-{% endcapture %}
-{% capture signal-int-thro-xml %}
+#### XML
 
 An example of the XML of a signal intermediate catch events is:
 
@@ -1005,15 +1025,9 @@ An example of the XML of a signal with a process instance scope is:
 <bpmn2:signal id="Signal_0hnsd2r" name="Signal_0hnsd2r" activiti:scope="processInstance" />
 ```
 
-{% endcapture %}
-
-{% include tabs.html tableid="signal-int-thro" opt1="Properties" content1=signal-int-thro-prop opt2="Signal" content2=signal opt3="Appearance" content3=signal-int-thro-img opt4="XML" content4=signal-int-thro-xml %}
-
 ### Timer intermediate catch event
 
 Timer intermediate catching events cause the process flow to wait until a specific time or interval is reached. The time to wait is defined in the `timerEventDefinition` property.
-
-{% capture timer-int-cat-prop %}
 
 #### Basic properties
 
@@ -1029,13 +1043,65 @@ The basic properties for a timer intermediate catch event are:
 
 A choice of timer must be set for timer start events, based on a **Cycle**, **Date** or **Duration**.
 
-{% endcapture %}
-{% capture timer-int-cat-img %}
+Timer events are used to influence events at specific times, after a set amount of time has passed or at intervals. All timer events use the international standard [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) for specifying time formats.
+
+**Note**: All properties within `timerEventDefinition` can accept process variables as their values as long as they are in ISO 8601 or cron expression format.
+
+Timer events are displayed as a clock icon inside different shapes that differentiate between the event types.
+
+#### timeDate
+
+The `timeDate` property for timer events defines a specific date and time in ISO 8601 format for when the trigger will be fired and can include a specified time zone.
+
+The following is an example of the `timerEventDefinition` using a `timeDate`:
+
+* `2017-05-17` represents the 17th May 2017 in *YYYY-MM-DD* format
+* `T12:42:23` represents the time of 12:42:23 in *hh:mm:ss* format
+* `Z` represents that the time format is in UTC (Coordinated Universal Time). The time can also contain UTC offsets such as `+01` for an hour ahead of UTC. When an offset is defined the `Z` is not required, for example: `T12:42:23+01`
+
+#### timeDuration
+
+The `timeDuration` property for timer events defines how long a timer should wait in ISO 8601 format before the trigger is fired.
+
+The following are the letters used to refer to duration:
+
+| Letter | Description |
+| ------ | ----------- |
+| `P` | Designates that the following letters and numbers represent a duration. Must always be present |
+| `Y` | Represents a year and follows the number of years, for example `P2Y` is 2 years |
+| `M` | Represents a month and follows the number of months when preceded by a `P`, for example `P3Y4M` is 2 years and 4 months |
+| `W` | Represents a week and follows the number of weeks, for example `P10W` for 10 weeks |
+| `D` | Represents a day and follows the number of days, for example `P1Y1M1D` for 1 year, 1 month and 1 day |
+| `T` | Designates that the following letters represent a duration of hours to seconds. Must always be present to refer to hours, minutes and seconds |
+| `H` | Represents an hour and follows the number of hours, for example `P1DT0.5H` for 1 day and half an hour |
+| `M` | Represents a minute and follows the number of minutes when preceded by a `T`, for example `PT1M` for 1 minute |
+| `S` | Represents a second and follows the number of seconds, for example `P2Y3M4DT5H6M7S` for 2 years, 3 months, 4 days, 5 hours, 6 minutes and 7 seconds |
+
+#### timeCycle
+
+The `timeCycle` property for timer events defines intervals for the trigger to fire at. Intervals can be defined using the time intervals that adhere to the ISO 8601 standard or by using cron expressions.
+
+##### Time intervals
+
+Time intervals use the syntax `R/` to set a number of repetitions, for example `R5/` would repeat five times. 
+
+Following the repetition, a duration can be set for when the repetition occurs, for example `R5/PT10H` would repeat every 10 hours, five times.
+
+**Note** The duration uses the same format as for `timeDuration`.
+
+An optional end date can also be set after the duration and separated by a `/`.
+
+**Note**: The end date uses the same format as for `timeDate`.
+
+##### Cron expression intervals
+
+[Cron expressions](https://en.wikipedia.org/wiki/Cron#CRON_expression) can also be used to define repeating triggers for timer events.
+
+#### Display
 
 Timer intermediate catch events are displayed as two thin concentric circles with a clock icon inside.
 
-{% endcapture %}
-{% capture timer-int-cat-xml %}
+#### XML
 
 An example of the XML of a signal intermediate catch events is:
 
@@ -1089,10 +1155,6 @@ An example of the XML for `timeCycle` using a cron expression is:
 
 **Note**: This represents a trigger firing every 5 minutes beginning at the top of the hour.
 
-{% endcapture %}
-
-{% include tabs.html tableid="timer-int-cat" opt1="Properties" content1=timer-int-cat-prop opt2="Timer" content2=timer opt3="Appearance" content3=timer-int-cat-img opt4="XML" content4=timer-int-cat-xml %}
-
 ## Boundary events
 
 Boundary events are assigned to other BPMN elements such as service tasks and user tasks. They are used by dragging the selected boundary type onto the BPMN element to influence and using the spanner icon to select the type of boundary event to use.
@@ -1118,8 +1180,6 @@ The types of boundary event are:
 
 Error boundary events catch error events on the boundary of another element. Error boundary events are always interrupting, so as soon as an error is caught all process execution within the element they are attached to ceases.
 
-{% capture error-bound-prop %}
-
 #### Basic properties
 
 The basic properties for an error boundary event are:
@@ -1134,13 +1194,19 @@ The basic properties for an error boundary event are:
 
 An error needs to be defined for the error boundary event to catch. A previously created **Error** can be selected from the dropdown in its properties, or a new one created using the **+** symbol. An **Error name** and **Error code** can then be set.
 
-{% endcapture %}
-{% capture error-bound-img %}
+Error events are used to model an exception in a business process. Errors are thrown by error end events and caught by error start events and error boundary events.
+
+The `errorRef` property in the `errorEventDefinition` of an error event element will match against the `id` of an error when viewing the **XML Editor**.
+
+Error events are displayed as a lightning bolt icon inside different shapes that differentiate between the event types. A solid lightning bolt represents a throwing event, whilst a hollow lightning bolt represents a catching event.
+
+To create a new error use the **+** symbol against an error event such as a start error event, or make sure no BPMN element is selected by clicking on a blank section of the process canvas and the **Edit Errors** button will be visible in the right-hand properties panel.
+
+#### Display
 
 Error boundary events are displayed as two thin concentric circles with a hollow lightning bolt icon inside attached to the border of another BPMN element.
 
-{% endcapture %}
-{% capture error-bound-xml %}
+#### XML
 
 An example of the XML of an error boundary events is:
 
@@ -1156,15 +1222,9 @@ An example of the XML of a signal is:
 <bpmn2:error id="Error_0vbkbeb" name="payment-failed-error" errorCode="404" />
 ```
 
-{% endcapture %}
-
-{% include tabs.html tableid="error-bound" opt1="Properties" content1=error-bound-prop opt2="Error" content2=error opt3="Appearance" content3=error-bound-img opt4="XML" content4=error-bound-xml %}
-
 ### Message boundary event
 
 Message boundary events are attached to the boundary of another element. When a named message is received by the message boundary event, the process flow will be interrupted or a concurrent flow will be created depending on whether the event is interrupting or non-interrupting.
-
-{% capture message-bound-prop %}
 
 #### Basic properties
 
@@ -1180,13 +1240,52 @@ The basic properties for a message boundary event are:
 
 A message needs to be defined for the message boundary event to catch when it is thrown. A previously created **Message** can be selected from the dropdown in its properties, or a new one created using the **+** symbol. A **Message name** and payload can then be set.
 
-{% endcapture %}
-{% capture message-bound-img %}
+
+#### Message
+
+Messages have a name and contain a payload. They are sent by message throwing events and received by message catching events in a 1:1 relationship between throw events and catch events. Messages contain a payload known as a message payload and can be passed between scopes, for example between two different process definitions within the same diagram that are separated by different [pools](#pools-and-lanes).
+
+The message `id` property of a message is matched against the `messageRef` property in the corresponding throw and catch message elements when viewing the **XML Editor**.
+
+To create a new message use the **+** symbol against a message event such as a message boundary event, or make sure no BPMN element is selected by clicking on a blank section of the process canvas and the **Edit Messages** button will be visible in the right-hand properties panel.
+
+Message events are displayed as an envelope icon inside different shapes that differentiate between the event types. A solid envelope represents a throwing event, whilst a hollow envelope represents a catching event.
+
+#### Message payloads
+
+Message payloads contain a set of values that are sent from a throwing event and received by a catching event.
+
+Message payloads can only be created on a message throw event and contain one or more properties that have a `name`, `type` and `value`. The property types for payloads are:
+
+| Type | Description |
+| ---- | ----------- |
+| String | A sequence of characters, for example `#Mint-Ice-Cream-4!` |
+| Integer | A positive whole number, for example `642` |
+| Boolean | A value of either `true` or `false` |
+| Date | A specific date in the format `YYYY-MM-DD`, for example `2020-04-22` |
+| Variable | A value passed from a [process variable](README.md#process-variables). |
+
+The receiving message catch event is then used to map the received values in the payload to process variables in its own scope.
+
+Message payload mappings can be viewed in the **Extensions Editor** of a process diagram. Throwing events are mapped as `inputs` and catching events are mapped as `outputs` from an event.
+
+#### Correlation keys
+
+Message events can optionally contain a correlation key. If a correlation key is present then when a message is thrown it uses the `activiti:correlationKey` value and the `messageRef` of the throwing event to match against the same two properties in a catching event. If only one property is matched then the message will not be caught.
+
+Using a [process variable](README.md#process-variables) for the correlation key in a throwing event and a static value for its corresponding catching event allows for the message to only be caught in specific circumstances.
+
+**Note**: Message start events cannot contain a correlation key unless they are used in a [sub process](#sub-processes-and-call-activities).
+
+#### Message flows
+
+When messages are used between two different [pools](#pools-and-lanes) the sequence flow that connects them is a dotted line called a message flow. The message flow is part of the `collaboration` element in the XML created by introducing a pool. Message flows reference the throwing message event as the `sourceRef` and the catching message event as the `targetRef`.
+
+#### Display
 
 Message boundary events are displayed as two thin concentric circles, or two thin dashed concentric circles, with a hollow envelope icon inside attached to the border of another BPMN element.
 
-{% endcapture %}
-{% capture message-bound-xml %}
+#### XML
 
 An example of the XML of an interrupting message boundary events is:
 
@@ -1251,15 +1350,9 @@ An example of the XML of a message flow is:
 </bpmn2:collaboration>
 ```
 
-{% endcapture %}
-
-{% include tabs.html tableid="message-bound" opt1="Properties" content1=message-bound-prop opt2="Message" content2=message opt3="Appearance" content3=message-bound-img opt4="XML" content4=message-bound-xml %}
-
 ### Signal boundary event
 
 Signal boundary events can be considered catching events as they always wait to receive a named signal from a throwing event.
-
-{% capture signal-bound-prop %}
 
 #### Basic properties
 
@@ -1277,13 +1370,17 @@ A signal needs to be defined for the signal boundary event to catch. A previousl
 
 Signals can be restricted to the process instance they are thrown in, or be global in scope. The scope of a global signal is restricted to the project they are used in.
 
-{% endcapture %}
-{% capture signal-bound-img %}
+Signal events can be either catching or throwing. A throwing signal event will emit a signal when it is reached in a process instance that will be picked up by any catching signal event with a matching signal name. Signals can be restricted to the process instance they are thrown in, or be global in scope. The scope of a global signal is restricted to the project they are used in.
+
+The `id` of a signal will match against the `signalRef` of a catching or throwing event.
+
+Signal events are displayed as a triangle icon inside different shapes that differentiate between the event types. A solid triangle represents a throwing event, whilst a hollow triangle represents a catching event.
+
+#### Display
 
 Signal boundary events are displayed as two thin concentric circles with a hollow triangle icon inside attached to the border of another BPMN element.
 
-{% endcapture %}
-{% capture signal-bound-xml %}
+#### XML
 
 An example of the XML of a signal boundary events is:
 
@@ -1305,15 +1402,9 @@ An example of the XML of a signal with a process instance scope is:
 <bpmn2:signal id="Signal_0hnsd2r" name="Signal_0hnsd2r" activiti:scope="processInstance" />
 ```
 
-{% endcapture %}
-
-{% include tabs.html tableid="signal-bound" opt1="Properties" content1=signal-bound-prop opt2="Signal" content2=signal opt3="Appearance" content3=signal-bound-img opt4="XML" content4=signal-bound-xml %}
-
 ### Timer boundary event
 
 Timer boundary events can be interrupting or non-interrupting. They wait for a specified time before triggering and can also be set to trigger at multiple intervals.
-
-{% capture timer-bound-prop %}
 
 #### Basic properties
 
@@ -1329,13 +1420,65 @@ The basic properties for a timer boundary event are:
 
 A choice of timer must be set for timer start events, based on a **Cycle**, **Date** or **Duration**.
 
-{% endcapture %}
-{% capture timer-bound-img %}
+Timer events are used to influence events at specific times, after a set amount of time has passed or at intervals. All timer events use the international standard [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) for specifying time formats.
+
+**Note**: All properties within `timerEventDefinition` can accept process variables as their values as long as they are in ISO 8601 or cron expression format.
+
+Timer events are displayed as a clock icon inside different shapes that differentiate between the event types.
+
+#### timeDate
+
+The `timeDate` property for timer events defines a specific date and time in ISO 8601 format for when the trigger will be fired and can include a specified time zone.
+
+The following is an example of the `timerEventDefinition` using a `timeDate`:
+
+* `2017-05-17` represents the 17th May 2017 in *YYYY-MM-DD* format
+* `T12:42:23` represents the time of 12:42:23 in *hh:mm:ss* format
+* `Z` represents that the time format is in UTC (Coordinated Universal Time). The time can also contain UTC offsets such as `+01` for an hour ahead of UTC. When an offset is defined the `Z` is not required, for example: `T12:42:23+01`
+
+#### timeDuration
+
+The `timeDuration` property for timer events defines how long a timer should wait in ISO 8601 format before the trigger is fired.
+
+The following are the letters used to refer to duration:
+
+| Letter | Description |
+| ------ | ----------- |
+| `P` | Designates that the following letters and numbers represent a duration. Must always be present |
+| `Y` | Represents a year and follows the number of years, for example `P2Y` is 2 years |
+| `M` | Represents a month and follows the number of months when preceded by a `P`, for example `P3Y4M` is 2 years and 4 months |
+| `W` | Represents a week and follows the number of weeks, for example `P10W` for 10 weeks |
+| `D` | Represents a day and follows the number of days, for example `P1Y1M1D` for 1 year, 1 month and 1 day |
+| `T` | Designates that the following letters represent a duration of hours to seconds. Must always be present to refer to hours, minutes and seconds |
+| `H` | Represents an hour and follows the number of hours, for example `P1DT0.5H` for 1 day and half an hour |
+| `M` | Represents a minute and follows the number of minutes when preceded by a `T`, for example `PT1M` for 1 minute |
+| `S` | Represents a second and follows the number of seconds, for example `P2Y3M4DT5H6M7S` for 2 years, 3 months, 4 days, 5 hours, 6 minutes and 7 seconds |
+
+#### timeCycle
+
+The `timeCycle` property for timer events defines intervals for the trigger to fire at. Intervals can be defined using the time intervals that adhere to the ISO 8601 standard or by using cron expressions.
+
+##### Time intervals
+
+Time intervals use the syntax `R/` to set a number of repetitions, for example `R5/` would repeat five times. 
+
+Following the repetition, a duration can be set for when the repetition occurs, for example `R5/PT10H` would repeat every 10 hours, five times.
+
+**Note** The duration uses the same format as for `timeDuration`.
+
+An optional end date can also be set after the duration and separated by a `/`.
+
+**Note**: The end date uses the same format as for `timeDate`.
+
+##### Cron expression intervals
+
+[Cron expressions](https://en.wikipedia.org/wiki/Cron#CRON_expression) can also be used to define repeating triggers for timer events.
+
+#### Display
 
 Timer boundary events are displayed as two thin concentric circles, or two thin dashed concentric circles, with a clock icon inside attached to the border of another BPMN element.
 
-{% endcapture %}
-{% capture timer-bound-xml %}
+#### XML
 
 An example of the XML of an interrupting timer boundary events is:
 
@@ -1397,10 +1540,6 @@ An example of the XML for `timeCycle` using a cron expression is:
 
 **Note**: This represents a trigger firing every 5 minutes beginning at the top of the hour.
 
-{% endcapture %}
-
-{% include tabs.html tableid="timer-bound" opt1="Properties" content1=timer-bound-prop opt2="Timer" content2=timer opt3="Appearance" content3=timer-bound-img opt4="XML" content4=timer-bound-xml %}
-
 ## Gateways
 
 Gateways are used to deal with convergence and divergence of the process flow. They allow for more than one fork of a process to be followed, or they can evaluate conditions so that a different route may be followed for each specific set of circumstances.
@@ -1417,8 +1556,6 @@ Exclusive gateways represent a decision within a process.
 
 Once the process flow reaches an exclusive gateway, all of the outgoing sequence flow options are evaluated in the order they are defined. The first option that evaluates to true is the sequence flow that is followed. A default sequence flow can be set incase none of the outgoing sequence flows evaluate to true.
 
-{% capture excl-gate-prop %}
-
 #### Basic properties
 
 The basic properties for an exclusive gateway are:
@@ -1433,15 +1570,13 @@ The basic properties for an exclusive gateway are:
 
 The name of a [sequence flow](#sequence-flow) can be used to select a default flow for the gateway to take. This path will be followed if none of the other sequence flows evaluate to true. Conditional expressions can be configured on sequence flows to select which path is taken.
 
-{% endcapture %}
-{% capture excl-gate-img %}
+#### Display
 
 Exclusive gateways are displayed as a single thin diamond shape with an X icon inside.
 
 **Note**: A single thin diamond on its own defaults to an exclusive gateway, however the BPMN specification does not allow diamonds with, and without, an X in the same process definition.
 
-{% endcapture %}
-{% capture excl-gate-xml %}
+#### XML
 
 An example of the XML of an exclusive gateway is:
 
@@ -1460,10 +1595,6 @@ An example of the XML of an exclusive gateway is:
     </bpmn2:sequenceFlow>
 ```
 
-{% endcapture %}
-
-{% include tabs.html tableid="excl-gate" opt1="Properties" content1=excl-gate-prop opt2="Appearance" content2=excl-gate-img opt3="XML" content3=excl-gate-xml %}
-
 ### Inclusive gateway
 
 Inclusive gateways allow for convergence and divergence in a process, however they also allow for conditional sequence flows.
@@ -1471,8 +1602,6 @@ Inclusive gateways allow for convergence and divergence in a process, however th
 Once the process flow reaches an inclusive gateway, all of the outgoing sequence flows are evaluated and all flows that evaluate to true are followed for divergent behavior. A default sequence flow can be set incase none of the outgoing sequence flows evaluate to true.
 
 For a converging inclusive gateway, the process waits until all active sequence flows reach the gateway before continuing.
-
-{% capture incl-gate-prop %}
 
 #### Basic properties
 
@@ -1488,13 +1617,11 @@ The basic properties for an inclusive gateway are:
 
 The name of a [sequence flow](#sequence-flow) can be used to select a default flow for the gateway to take. This path will be followed if none of the other sequence flows evaluate to true. Conditional expressions can be configured on sequence flows to select which path is taken.
 
-{% endcapture %}
-{% capture incl-gate-img %}
+#### Display
 
 Inclusive gateways are displayed as a single thin diamond shape with a circle inside.
 
-{% endcapture %}
-{% capture incl-gate-xml %}
+#### XML
 
 An example of the XML of an inclusive gateway is:
 
@@ -1513,10 +1640,6 @@ An example of the XML of an inclusive gateway is:
     </bpmn2:sequenceFlow>
 ```
 
-{% endcapture %}
-
-{% include tabs.html tableid="incl-gate" opt1="Properties" content1=incl-gate-prop opt2="Appearance" content2=incl-gate-img opt3="XML" content3=incl-gate-xml %}
-
 ### Parallel gateway
 
 Parallel gateways represent a concurrent convergence or divergence in a process.
@@ -1526,8 +1649,6 @@ Divergence means that all sequence flows exiting a parallel gateway are executed
 Parallel gateways do not evaluate conditions. Any conditions set on a sequence flow will be ignored by the parallel gateway.
 
 **Note**: It is possible for a single parallel gateway to execute both converging and diverging behavior.
-
-{% capture para-gate-prop %}
 
 #### Basic properties
 
@@ -1539,13 +1660,11 @@ The basic properties for a parallel gateway are:
 | Name | *Optional.* The name of the parallel gateway. This will be displayed on the canvas. |
 | Documentation | *Optional.* A free text description of what the parallel gateway does. |
 
-{% endcapture %}
-{% capture para-gate-img %}
+#### Display
 
 Parallel gateways are displayed as a single thin diamond shape with a + icon inside.
 
-{% endcapture %}
-{% capture para-gate-xml %}
+#### XML
 
 An example of the XML of a parallel gateway is:
 
@@ -1557,10 +1676,6 @@ An example of the XML of a parallel gateway is:
  	</bpmn2:sequenceFlow>
 </bpmn2:parallelGateway>
 ```
-
-{% endcapture %}
-
-{% include tabs.html tableid="para-gate" opt1="Properties" content1=para-gate-prop opt2="Appearance" content2=para-gate-img opt3="XML" content3=para-gate-xml %}
 
 ## Tasks
 
@@ -1575,11 +1690,9 @@ The types of task are:
 
 ### Business rule task
 
-Business rule tasks are used to include [decision tables]({% link process-automation/latest/model/decisions.md %}) in a process definition.
+Business rule tasks are used to include [decision tables](../decisions.md) in a process definition.
 
 Business rule tasks are essentially treated as service tasks and will always have the `implementation` value of `dmn-connector.EXECTUTE_TABLE`. The `name` of the decision table that is associated to the business rule task is used as the `value` under `_activiti_dmn_table_` when viewing the **Extensions Editor**.
-
-{% capture business-prop %}
 
 #### Basic properties
 
@@ -1591,20 +1704,15 @@ The basic properties for a business rule task are:
 | Name | *Optional.* The name of the business rule task. This will be displayed on the canvas. |
 | Documentation | *Optional.* A free text description of what the business rule task does. |
 
-#### Multi-instance type
-
-Business rule tasks can be set to repeat sequentially or in parallel when the process flow reaches them.
-
 #### Decision table name
 
-The name of the [decision table]({% link process-automation/latest/model/decisions.md %}) to use. The decision table must exist within the same project as the process definition to be selected. Select a decision table from the dropdown, else create a new one using the **+** symbol.
+The name of the [decision table](../decisions.md) to use. The decision table must exist within the same project as the process definition to be selected. Select a decision table from the dropdown, else create a new one using the **+** symbol.
 
 #### Mapping type
 
-The mapping type sets how data is passed between the decision table and the process. There are [five options](%{ link process-automation/latest/model/processes/index.md %}#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
+The mapping type sets how data is passed between the decision table and the process. There are [five options](README.md#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
 
-{% endcapture %}
-{% capture multi %}
+#### Multi-instance type
 
 Multi-instance allows for the element to be repeated within a process. There are two options for how to execute multi-instance elements: sequentially or in parallel.
 
@@ -1614,7 +1722,7 @@ Multi-instance allows for the element to be repeated within a process. There are
 
 Multi instance elements are displayed as three parallel lines at the bottom of the original element. Sequential lines are horizontal and parallel lines are vertical.
 
-#### Variables
+##### Variables
 
 Each multi-instance execution has three variables:
 
@@ -1624,7 +1732,7 @@ Each multi-instance execution has three variables:
 | nrOfActiveInstances | The number of currently active instances. For sequential multi-instances the value will always be 1 |
 | nrOfCompletedInstances | The number of instances that have already been completed |
 
-**Note**: These variables can be used in multi-instance expressions without having to be declared as [process variables]({% link process-automation/latest/model/processes/index.md %}#process-variables).
+**Note**: These variables can be used in multi-instance expressions without having to be declared as [process variables](README.md#process-variables).
 
 Each instance in the multi-instance execution also has an instance-local variable that is not visible to other instances, nor to the process instance:
 
@@ -1632,33 +1740,31 @@ Each instance in the multi-instance execution also has an instance-local variabl
 | -------- | ----------- |
 | loopCounter | The index in the for-each loop of that particular instance |
 
-#### Cardinality
+##### Cardinality
 
-Cardinality sets the number of instances to be executed by the multi-instance element. This can be set as a static value, a [process variable]({% link process-automation/latest/model/processes/index.md %}#process-variables) or calculated as an expression.
+Cardinality sets the number of instances to be executed by the multi-instance element. This can be set as a static value, a [process variable](README.#process-variables) or calculated as an expression.
 
-#### Collection
+##### Collection
 
 A collection can be used to set the number of instances to be executed by referencing a list of items.
 
 An element variable can optionally be used with a collection. An element variable is used to create a variable for each instance of the multi-instance element and each variable created by the element variable is assigned one value from the collection.
 
-#### Completion condition
+##### Completion condition
 
 A completion condition can optionally be included for multi-instances. When the completion condition evaluates to `true`, all remaining instances are cancelled and the multi-instance activity ends.
 
-#### Results
+##### Results
 
 A result collection can be set to aggregate the results from each instance into a variable. The result collection is created as a process variable after instance execution has finished.
 
 The result element variable is used to select the field or variable from the BPMN element to aggregate into the result collection.
 
-{% endcapture %}
-{% capture business-img %}
+#### Display
 
 Business rule tasks are displayed as a single, thin rounded rectangle with a table icon inside.
 
-{% endcapture %}
-{% capture business-xml %}
+#### XML
 
 An example of the XML of a business rule task is:
 
@@ -1756,17 +1862,11 @@ An example of the XML of a multi-instance element is:
 >["chocolate", "mint", "strawberry"]
 >```
 
-{% endcapture %}
-
-{% include tabs.html tableid="business" opt1="Properties" content1=business-prop opt2="Multi-instance" content2=multi opt3="Appearance" content3=business-img opt4="XML" content4=business-xml %}
-
 ### Script task
 
-Script tasks are used to include [scripts]({% link process-automation/latest/model/scripts.md %}) in a process definition.
+Script tasks are used to include [scripts]({../scripts.md) in a process definition.
 
 Script tasks are essentially treated as service tasks and will always have the `implementation` value of `script.EXECUTE`. The `name` of the script that is associated to the script task is used as the `value` under `_activiti_script_` when viewing the **Extensions Editor**.
-
-{% capture script-prop %}
 
 #### Basic properties
 
@@ -1778,25 +1878,67 @@ The basic properties for a script task are:
 | Name | *Optional.* The name of the script task. This will be displayed on the canvas. |
 | Documentation | *Optional.* A free text description of what the script task does. |
 
-#### Multi-instance type
-
-Script tasks can be set to repeat sequentially or in parallel when the process flow reaches them.
-
 #### Script name
 
-The name of the [script]({% link process-automation/latest/model/scripts.md %}) to use. The script must exist within the same project as the process definition to be selected. Select a script from the dropdown, else create a new one using the **+** symbol.
+The name of the [script](../scripts.md) to use. The script must exist within the same project as the process definition to be selected. Select a script from the dropdown, else create a new one using the **+** symbol.
 
 #### Mapping type
 
-The mapping type sets how data is passed between the script and the process. There are [five options](%{ link process-automation/latest/model/processes/index.md %}#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
+The mapping type sets how data is passed between the script and the process. There are [five options](README.md/#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
 
-{% endcapture %}
-{% capture script-img %}
+#### Multi-instance type
+
+Multi-instance allows for the element to be repeated within a process. There are two options for how to execute multi-instance elements: sequentially or in parallel.
+
+* Sequential executions only ever have a single instance running at any one time. The next instance will only start after the previous one has been completed.
+
+* Parallel executions start all instances at once, meaning they are all active and can all be worked on at the same time.
+
+Multi instance elements are displayed as three parallel lines at the bottom of the original element. Sequential lines are horizontal and parallel lines are vertical.
+
+##### Variables
+
+Each multi-instance execution has three variables:
+
+| Variable | Description |
+| -------- | ----------- |
+| nrOfInstances | The total number of instances |
+| nrOfActiveInstances | The number of currently active instances. For sequential multi-instances the value will always be 1 |
+| nrOfCompletedInstances | The number of instances that have already been completed |
+
+**Note**: These variables can be used in multi-instance expressions without having to be declared as [process variables](README.md#process-variables).
+
+Each instance in the multi-instance execution also has an instance-local variable that is not visible to other instances, nor to the process instance:
+
+| Variable | Description |
+| -------- | ----------- |
+| loopCounter | The index in the for-each loop of that particular instance |
+
+##### Cardinality
+
+Cardinality sets the number of instances to be executed by the multi-instance element. This can be set as a static value, a [process variable](README.#process-variables) or calculated as an expression.
+
+##### Collection
+
+A collection can be used to set the number of instances to be executed by referencing a list of items.
+
+An element variable can optionally be used with a collection. An element variable is used to create a variable for each instance of the multi-instance element and each variable created by the element variable is assigned one value from the collection.
+
+##### Completion condition
+
+A completion condition can optionally be included for multi-instances. When the completion condition evaluates to `true`, all remaining instances are cancelled and the multi-instance activity ends.
+
+##### Results
+
+A result collection can be set to aggregate the results from each instance into a variable. The result collection is created as a process variable after instance execution has finished.
+
+The result element variable is used to select the field or variable from the BPMN element to aggregate into the result collection.
+
+#### Display
 
 Script tasks are displayed as a single thin, rounded rectangle with a script icon inside.
 
-{% endcapture %}
-{% capture script-xml %}
+#### XML
 
 An example of the XML of a script task is:
 
@@ -1896,17 +2038,11 @@ An example of the XML of a multi-instance element is:
 >["chocolate", "mint", "strawberry"]
 >```
 
-{% endcapture %}
-
-{% include tabs.html tableid="script" opt1="Properties" content1=script-prop opt2="Multi-instance" content2=multi opt3="Appearance" content3=script-img opt4="XML" content4=script-xml %}
-
 ### Service task
 
-Service tasks are used to include [connectors]({% link process-automation/latest/model/connectors/index.md %}), business rule tasks and script tasks in a process.
+Service tasks are used to include [connectors](../connectors/README.md), business rule tasks and script tasks in a process.
 
 **Note**: Service tasks do not emit the `TASK_CREATED` and `TASK_COMPLETED` events. The `INTEGRATION_REQUESTED` and `INTEGRATION_RESULT_RECEIVED` events should be monitored to report or track service tasks instead.
-
-{% capture service-prop %}
 
 #### Basic properties
 
@@ -1918,29 +2054,71 @@ The basic properties for a service task are:
 | Name | *Optional.* The name of the service task. This will be displayed on the canvas. |
 | Documentation | *Optional.* A free text description of what the service task does. |
 
-#### Multi-instance type
-
-Script tasks can be set to repeat sequentially or in parallel when the process flow reaches them.
-
 #### Implementation
 
 The implementation value is used to associate a connector with a service task. For business rule tasks and script tasks this value is set by default and cannot be changed. The format is `<connector-name>.<connector-action>`.
 
 #### Action
 
-An action selects which of the connector actions that service task should execute, for example whether to send a message or create a new channel in Slack when using the [Slack connector]({% link process-automation/latest/model/connectors/slack.md %}).
+An action selects which of the connector actions that service task should execute, for example whether to send a message or create a new channel in Slack when using the [Slack connector](../connectors/slack.md).
 
 #### Mapping type
 
-The mapping type sets how data is passed between the connector and the process. There are [five options](%{ link process-automation/latest/model/processes/index.md %}#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
+The mapping type sets how data is passed between the connector and the process. There are [five options](README.md#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
 
-{% endcapture %}
-{% capture service-img %}
+#### Multi-instance type
+
+Multi-instance allows for the element to be repeated within a process. There are two options for how to execute multi-instance elements: sequentially or in parallel.
+
+* Sequential executions only ever have a single instance running at any one time. The next instance will only start after the previous one has been completed.
+
+* Parallel executions start all instances at once, meaning they are all active and can all be worked on at the same time.
+
+Multi instance elements are displayed as three parallel lines at the bottom of the original element. Sequential lines are horizontal and parallel lines are vertical.
+
+##### Variables
+
+Each multi-instance execution has three variables:
+
+| Variable | Description |
+| -------- | ----------- |
+| nrOfInstances | The total number of instances |
+| nrOfActiveInstances | The number of currently active instances. For sequential multi-instances the value will always be 1 |
+| nrOfCompletedInstances | The number of instances that have already been completed |
+
+**Note**: These variables can be used in multi-instance expressions without having to be declared as [process variables](README.md#process-variables).
+
+Each instance in the multi-instance execution also has an instance-local variable that is not visible to other instances, nor to the process instance:
+
+| Variable | Description |
+| -------- | ----------- |
+| loopCounter | The index in the for-each loop of that particular instance |
+
+##### Cardinality
+
+Cardinality sets the number of instances to be executed by the multi-instance element. This can be set as a static value, a [process variable](README.#process-variables) or calculated as an expression.
+
+##### Collection
+
+A collection can be used to set the number of instances to be executed by referencing a list of items.
+
+An element variable can optionally be used with a collection. An element variable is used to create a variable for each instance of the multi-instance element and each variable created by the element variable is assigned one value from the collection.
+
+##### Completion condition
+
+A completion condition can optionally be included for multi-instances. When the completion condition evaluates to `true`, all remaining instances are cancelled and the multi-instance activity ends.
+
+##### Results
+
+A result collection can be set to aggregate the results from each instance into a variable. The result collection is created as a process variable after instance execution has finished.
+
+The result element variable is used to select the field or variable from the BPMN element to aggregate into the result collection.
+
+#### Display
 
 Service tasks are displayed as a single, thin rounded rectangle with a cog icon inside.
 
-{% endcapture %}
-{% capture service-xml %}
+#### XML
 
 An example of the XML of a service task is:
 
@@ -2030,17 +2208,11 @@ An example of the XML of a multi-instance element is:
 >["chocolate", "mint", "strawberry"]
 >```
 
-{% endcapture %}
-
-{% include tabs.html tableid="service" opt1="Properties" content1=service-prop opt2="Multi-instance" content2=multi opt3="Appearance" content3=service-img opt4="XML" content4=service-xml %}
-
 ### User task
 
 User tasks represent a stage in the process where human action is required.
 
-Human action is handled by a task being assigned to specific users or groups. The task that is assigned can be modeled using a [form]({% link process-automation/latest/model/forms.md %}). Once a task is completed, the process flow continues on to the next element in the process.
-
-{% capture user-prop %}
+Human action is handled by a task being assigned to specific users or groups. The task that is assigned can be modeled using a [form](../forms.md). Once a task is completed, the process flow continues on to the next element in the process.
 
 #### Basic properties
 
@@ -2062,25 +2234,21 @@ Users and groups can be set from three different sources:
 
 * **Static** values are a free text field that has no validation as to whether a user exists or not. The text entered will require an exact match to a `username` in the product environment for the user task to be correctly assigned at runtime.
 
-* **Identity** allows for [users and groups]({% link process-automation/latest/admin/users.md %}) to be searched for and selected for the assignment. The users and groups must exist whilst modeling to display in this list.
+* **Identity** allows for [users and groups](../admin/users.md) to be searched for and selected for the assignment. The users and groups must exist whilst modeling to display in this list.
 
-* **Expression** allows for an expression using [process variables]({% link process-automation/latest/model/processes/index.md %}#process-variables) to be used to select users and groups for the assignment. Expressions can be a simple process variable such as `${userToAssign}` or an expression such as `${userDetails.username}` that uses a process variable of type JSON. A JSON editor is provided for creating expressions for assignment, however the editor will only be displayed if there are process variables in the process.
+* **Expression** allows for an expression using [process variables](README.md#process-variables) to be used to select users and groups for the assignment. Expressions can be a simple process variable such as `${userToAssign}` or an expression such as `${userDetails.username}` that uses a process variable of type JSON. A JSON editor is provided for creating expressions for assignment, however the editor will only be displayed if there are process variables in the process.
 
     **Note**: The value `"assignee": "${initiator}"` can be set as an expression without creating a process variable. This will assign the task to the user that started the process instance.  
 
 The assignments for user tasks are stored in the `assignments` property of the **Extensions Editor**.
 
-**Note**: Users and groups that are selected as assignees or candidates in a user task are automatically added as [users]({% link process-automation/latest/admin/release.md %}#deploy-steps/user) when deploying an application if they are set using the static or identity options. Setting an assignee or candidate using the expression source will require the potential users or groups to be manually assigned users when deploying an application.
+**Note**: Users and groups that are selected as assignees or candidates in a user task are automatically added as [users](../admin/release.md#deployment) when deploying an application if they are set using the static or identity options. Setting an assignee or candidate using the expression source will require the potential users or groups to be manually assigned users when deploying an application.
 
 #### Due date
 
 An optional date and time for a user task to be completed by in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. A date picker can be used to choose the time and date.
 
-Checking the **Use process variable** box for due date allows a [process variable]({% link process-automation/latest/model/processes/index.md %}#process-variables) to be used to generate the date. The process variable must be of type `datetime`.
-
-#### Multi-instance type
-
-Script tasks can be set to repeat sequentially or in parallel when the process flow reaches them.
+Checking the **Use process variable** box for due date allows a [process variable](README.md#process-variables) to be used to generate the date. The process variable must be of type `datetime`.
 
 #### Priority
 
@@ -2088,21 +2256,67 @@ An optional priority for the user task between 0 and 4. The priority property is
 
 #### Form name
 
-A [form]({% link process-automation/latest/model/forms.md %}) can be assigned to the user task. The form must exist within the same project as the process definition to be selected. Select a form from the dropdown, else create a new form using the **+** symbol.
+A [form](../orms.md) can be assigned to the user task. The form must exist within the same project as the process definition to be selected. Select a form from the dropdown, else create a new form using the **+** symbol.
 
 Once a form has been selected, it can be edited using the **Open Form** symbol.
 
 #### Mapping type
 
-The mapping type sets how data is passed between the user task and the process. There are [five options](%{ link process-automation/latest/model/processes/index.md %}#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
+The mapping type sets how data is passed between the user task and the process. There are [five options](README.md#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
 
-{% endcapture %}
-{% capture user-img %}
+#### Multi-instance type
+
+Multi-instance allows for the element to be repeated within a process. There are two options for how to execute multi-instance elements: sequentially or in parallel.
+
+* Sequential executions only ever have a single instance running at any one time. The next instance will only start after the previous one has been completed.
+
+* Parallel executions start all instances at once, meaning they are all active and can all be worked on at the same time.
+
+Multi instance elements are displayed as three parallel lines at the bottom of the original element. Sequential lines are horizontal and parallel lines are vertical.
+
+##### Variables
+
+Each multi-instance execution has three variables:
+
+| Variable | Description |
+| -------- | ----------- |
+| nrOfInstances | The total number of instances |
+| nrOfActiveInstances | The number of currently active instances. For sequential multi-instances the value will always be 1 |
+| nrOfCompletedInstances | The number of instances that have already been completed |
+
+**Note**: These variables can be used in multi-instance expressions without having to be declared as [process variables](README.md#process-variables).
+
+Each instance in the multi-instance execution also has an instance-local variable that is not visible to other instances, nor to the process instance:
+
+| Variable | Description |
+| -------- | ----------- |
+| loopCounter | The index in the for-each loop of that particular instance |
+
+##### Cardinality
+
+Cardinality sets the number of instances to be executed by the multi-instance element. This can be set as a static value, a [process variable](README.#process-variables) or calculated as an expression.
+
+##### Collection
+
+A collection can be used to set the number of instances to be executed by referencing a list of items.
+
+An element variable can optionally be used with a collection. An element variable is used to create a variable for each instance of the multi-instance element and each variable created by the element variable is assigned one value from the collection.
+
+##### Completion condition
+
+A completion condition can optionally be included for multi-instances. When the completion condition evaluates to `true`, all remaining instances are cancelled and the multi-instance activity ends.
+
+##### Results
+
+A result collection can be set to aggregate the results from each instance into a variable. The result collection is created as a process variable after instance execution has finished.
+
+The result element variable is used to select the field or variable from the BPMN element to aggregate into the result collection.
+
+#### Display
 
 User tasks are displayed as a single thin, rounded rectangle with a user icon inside.
 
-{% endcapture %}
-{% capture user-xml %}
+#### XML
 
 An example of the XML of a user task is:
 
@@ -2192,10 +2406,6 @@ An example of the XML of a multi-instance element is:
 >["chocolate", "mint", "strawberry"]
 >```
 
-{% endcapture %}
-
-{% include tabs.html tableid="user" opt1="Properties" content1=user-prop opt2="Multi-instance" content2=multi opt3="Appearance" content3=user-img opt4="XML" content4=user-xml %}
-
 ## Sub-processes and call activities
 
 Sub-processes and call activities are used to define separate processes. Sub-processes are defined and executed within the same process definition as the parent process, whilst call activities start a completely separate process.
@@ -2212,11 +2422,9 @@ Call activities are used to start an instance of another process definition. The
 
 The `calledElement` property uses a `processDefinitionId` to define which process to start.
 
-**Note**: When a call activity element is executed it receives its own `processInstanceId`. The [process variables]({% link process-automation/latest/model/processes/index.md %}#process-variables) of a call activity are also completely separate to those in the parent process.
+**Note**: When a call activity element is executed it receives its own `processInstanceId`. The [process variables](README.md#process-variables) of a call activity are also completely separate to those in the parent process.
 
 **Note**: Call activities can only be used to start a process instance of a process definition that exists in the same application as the process that is calling it.
-
-{% capture call-prop %}
 
 #### Basic properties
 
@@ -2227,10 +2435,6 @@ The basic properties for a call activity are:
 | ID | *Required.* The unique identifier for the call activity. This is system generated and cannot be altered, for example `CallActivity_1kb3t8n`. |
 | Name | *Optional.* The name of the call activity. This will be displayed on the canvas. |
 | Documentation | *Optional.* A free text description of what the call activity does. |
-
-#### Multi-instance type
-
-Sub-processes can be set to repeat sequentially or in parallel when the process flow reaches them.
 
 #### Called element
 
@@ -2244,17 +2448,63 @@ The called element can be set in two ways:
 
 #### Mapping type
 
-The mapping type sets how data is passed between the parent process and the process being started by the call activity. There are [five options](%{ link process-automation/latest/model/processes/index.md %}#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
+The mapping type sets how data is passed between the parent process and the process being started by the call activity. There are [five options](README.md#process-variable-mapping) for how to send this data. The default value is **Send no variables**.
 
 **Note**: if an **Expression** is used to set which process definition to call in the call element property, it is not possible to explicitly map the variable exchange in the mapping type.
 
-{% endcapture %}
-{% capture call-img %}
+#### Multi-instance type
+
+Multi-instance allows for the element to be repeated within a process. There are two options for how to execute multi-instance elements: sequentially or in parallel.
+
+* Sequential executions only ever have a single instance running at any one time. The next instance will only start after the previous one has been completed.
+
+* Parallel executions start all instances at once, meaning they are all active and can all be worked on at the same time.
+
+Multi instance elements are displayed as three parallel lines at the bottom of the original element. Sequential lines are horizontal and parallel lines are vertical.
+
+##### Variables
+
+Each multi-instance execution has three variables:
+
+| Variable | Description |
+| -------- | ----------- |
+| nrOfInstances | The total number of instances |
+| nrOfActiveInstances | The number of currently active instances. For sequential multi-instances the value will always be 1 |
+| nrOfCompletedInstances | The number of instances that have already been completed |
+
+**Note**: These variables can be used in multi-instance expressions without having to be declared as [process variables](README.md#process-variables).
+
+Each instance in the multi-instance execution also has an instance-local variable that is not visible to other instances, nor to the process instance:
+
+| Variable | Description |
+| -------- | ----------- |
+| loopCounter | The index in the for-each loop of that particular instance |
+
+##### Cardinality
+
+Cardinality sets the number of instances to be executed by the multi-instance element. This can be set as a static value, a [process variable](README.#process-variables) or calculated as an expression.
+
+##### Collection
+
+A collection can be used to set the number of instances to be executed by referencing a list of items.
+
+An element variable can optionally be used with a collection. An element variable is used to create a variable for each instance of the multi-instance element and each variable created by the element variable is assigned one value from the collection.
+
+##### Completion condition
+
+A completion condition can optionally be included for multi-instances. When the completion condition evaluates to `true`, all remaining instances are cancelled and the multi-instance activity ends.
+
+##### Results
+
+A result collection can be set to aggregate the results from each instance into a variable. The result collection is created as a process variable after instance execution has finished.
+
+The result element variable is used to select the field or variable from the BPMN element to aggregate into the result collection.
+
+#### Display
 
 Call activities are displayed as a single, thick rounded rectangle without an icon inside.
 
-{% endcapture %}
-{% capture call-xml %}
+#### XML
 
 An example of the XML of a call activity is:
 
@@ -2343,19 +2593,13 @@ An example of the XML of a multi-instance element is:
 >["chocolate", "mint", "strawberry"]
 >```
 
-{% endcapture %}
-
-{% include tabs.html tableid="call" opt1="Properties" content1=call-prop opt2="Multi-instance" content2=multi opt3="Appearance" content3=call-img opt4="XML" content4=call-xml %}
-
 ### Expanded and collapsed sub-processes
 
 Sub-processes are also known as embedded sub-processes and can be expanded or collapsed. Elements for the sub-process can only be dragged into an expanded sub-process. Use the spanner icon against a sub-process to toggle between a collapsed and expanded state.
 
 A sub-process requires a start and an end event. Only a [standard start event](#start-event) can be used in embedded sub-processes. The sequence flow within a sub-process cannot cross its boundary without the sub-process completing. The advantage of a sub-process is that it creates its own scope within a process. This allows for boundary events to be attached to the sub-process.
 
-**Note**: When a sub-process is executed as part of a process instance, it does not receive a new `processInstanceId`. The elements within the sub-process will be executed under the ID of the parent process. [Process variables]({% link process-automation/latest/model/processes/index.md %}#process-variables) are also shared between a sub-process and its parent with no additional mapping required.
-
-{% capture sub-prop %}
+**Note**: When a sub-process is executed as part of a process instance, it does not receive a new `processInstanceId`. The elements within the sub-process will be executed under the ID of the parent process. [Process variables](README.md#process-variables) are also shared between a sub-process and its parent with no additional mapping required.
 
 #### Basic properties
 
@@ -2369,17 +2613,59 @@ The basic properties for a sub-process are:
 
 #### Multi-instance type
 
-Sub-processes can be set to repeat sequentially or in parallel when the process flow reaches them.
+Multi-instance allows for the element to be repeated within a process. There are two options for how to execute multi-instance elements: sequentially or in parallel.
 
-{% endcapture %}
-{% capture sub-img %}
+* Sequential executions only ever have a single instance running at any one time. The next instance will only start after the previous one has been completed.
+
+* Parallel executions start all instances at once, meaning they are all active and can all be worked on at the same time.
+
+Multi instance elements are displayed as three parallel lines at the bottom of the original element. Sequential lines are horizontal and parallel lines are vertical.
+
+##### Variables
+
+Each multi-instance execution has three variables:
+
+| Variable | Description |
+| -------- | ----------- |
+| nrOfInstances | The total number of instances |
+| nrOfActiveInstances | The number of currently active instances. For sequential multi-instances the value will always be 1 |
+| nrOfCompletedInstances | The number of instances that have already been completed |
+
+**Note**: These variables can be used in multi-instance expressions without having to be declared as [process variables](README.md#process-variables).
+
+Each instance in the multi-instance execution also has an instance-local variable that is not visible to other instances, nor to the process instance:
+
+| Variable | Description |
+| -------- | ----------- |
+| loopCounter | The index in the for-each loop of that particular instance |
+
+##### Cardinality
+
+Cardinality sets the number of instances to be executed by the multi-instance element. This can be set as a static value, a [process variable](README.#process-variables) or calculated as an expression.
+
+##### Collection
+
+A collection can be used to set the number of instances to be executed by referencing a list of items.
+
+An element variable can optionally be used with a collection. An element variable is used to create a variable for each instance of the multi-instance element and each variable created by the element variable is assigned one value from the collection.
+
+##### Completion condition
+
+A completion condition can optionally be included for multi-instances. When the completion condition evaluates to `true`, all remaining instances are cancelled and the multi-instance activity ends.
+
+##### Results
+
+A result collection can be set to aggregate the results from each instance into a variable. The result collection is created as a process variable after instance execution has finished.
+
+The result element variable is used to select the field or variable from the BPMN element to aggregate into the result collection.
+
+#### Display
 
 Whilst expanded, sub-processes are displayed as a single, thin rounded rectangle with the other BPMN elements they contain visible.
 
 Whilst collapsed, sub-processes are displayed as a single, thin rounded rectangle with a `+` symbol. The BPMN elements they contain are not visible in this state.
 
-{% endcapture %}
-{% capture sub-xml %}
+#### XML
 
 An example of the XML of a sub-process is:
 
@@ -2469,10 +2755,6 @@ An example of the XML of a multi-instance element is:
 >["chocolate", "mint", "strawberry"]
 >```
 
-{% endcapture %}
-
-{% include tabs.html tableid="sub" opt1="Properties" content1=sub-prop opt2="Multi-instance" content2=multi opt3="Appearance" content3=sub-img opt4="XML" content4=sub-xml %}
-
 ### Event sub-processes
 
 Event sub-processes are triggered by an event such as a signal or error and require a start and end event. As they are triggered by events an event sub-process can't be started by a standard start event. Instead start events such as error start events or message start events are used.
@@ -2481,9 +2763,7 @@ Event sub-processes are not connected to the main process flow as they can only 
 
 Event sub-processes can be placed at the process level or inside a sub-process.
 
-**Note**: When an event sub-process is executed as part of a process instance, it does not receive a new `processInstanceId`. The elements within the event sub-process will be executed under the ID of the parent process. [Process variables]({% link process-automation/latest/model/processes/index.md %}#process-variables) are also shared between an event sub-process and its parent with no additional mapping required.
-
-{% capture event-prop %}
+**Note**: When an event sub-process is executed as part of a process instance, it does not receive a new `processInstanceId`. The elements within the event sub-process will be executed under the ID of the parent process. [Process variables](README.md#process-variables) are also shared between an event sub-process and its parent with no additional mapping required.
 
 #### Basic properties
 
@@ -2497,15 +2777,57 @@ The basic properties for an event sub-process are:
 
 #### Multi-instance type
 
-Sub-processes can be set to repeat sequentially or in parallel when the process flow reaches them.
+Multi-instance allows for the element to be repeated within a process. There are two options for how to execute multi-instance elements: sequentially or in parallel.
 
-{% endcapture %}
-{% capture event-img %}
+* Sequential executions only ever have a single instance running at any one time. The next instance will only start after the previous one has been completed.
+
+* Parallel executions start all instances at once, meaning they are all active and can all be worked on at the same time.
+
+Multi instance elements are displayed as three parallel lines at the bottom of the original element. Sequential lines are horizontal and parallel lines are vertical.
+
+##### Variables
+
+Each multi-instance execution has three variables:
+
+| Variable | Description |
+| -------- | ----------- |
+| nrOfInstances | The total number of instances |
+| nrOfActiveInstances | The number of currently active instances. For sequential multi-instances the value will always be 1 |
+| nrOfCompletedInstances | The number of instances that have already been completed |
+
+**Note**: These variables can be used in multi-instance expressions without having to be declared as [process variables](README.md#process-variables).
+
+Each instance in the multi-instance execution also has an instance-local variable that is not visible to other instances, nor to the process instance:
+
+| Variable | Description |
+| -------- | ----------- |
+| loopCounter | The index in the for-each loop of that particular instance |
+
+##### Cardinality
+
+Cardinality sets the number of instances to be executed by the multi-instance element. This can be set as a static value, a [process variable](README.#process-variables) or calculated as an expression.
+
+##### Collection
+
+A collection can be used to set the number of instances to be executed by referencing a list of items.
+
+An element variable can optionally be used with a collection. An element variable is used to create a variable for each instance of the multi-instance element and each variable created by the element variable is assigned one value from the collection.
+
+##### Completion condition
+
+A completion condition can optionally be included for multi-instances. When the completion condition evaluates to `true`, all remaining instances are cancelled and the multi-instance activity ends.
+
+##### Results
+
+A result collection can be set to aggregate the results from each instance into a variable. The result collection is created as a process variable after instance execution has finished.
+
+The result element variable is used to select the field or variable from the BPMN element to aggregate into the result collection.
+
+#### Display
 
 Event sub-processes are displayed as a single, thin dotted rectangle.
 
-{% endcapture %}
-{% capture event-xml %}
+#### XML
 
 An example of the XML of an event sub-process is:
 
@@ -2593,10 +2915,6 @@ An example of the XML of a multi-instance element is:
 >["chocolate", "mint", "strawberry"]
 >```
 
-{% endcapture %}
-
-{% include tabs.html tableid="event" opt1="Properties" content1=event-prop opt2="Multi-instance" content2=multi opt3="Appearance" content3=event-img opt4="XML" content4=event-xml %}
-
 ## Sequence flows, pools and lanes
 
 Sequence flows represent the direction of flow in a process, whilst pools and lanes are used to model different participants, personas and process definitions in the same diagram.
@@ -2604,8 +2922,6 @@ Sequence flows represent the direction of flow in a process, whilst pools and la
 ### Sequence flow
 
 Sequence flows represent the direction of flow in a process. The can be drawn between BPMN elements using the **Global connect tool**.
-
-{% capture sequence-prop %}
 
 #### Basic properties
 
@@ -2623,13 +2939,11 @@ A condition expression can be set when a sequence flow is connected to an inclus
 
 Another example of conditional expressions is evaluating a sequence flow is using amounts, for example `${amount>500}` will take the sequence flow if the process variable `amount` is greater than 500 at the point the gateway is reached.
 
-{% endcapture %}
-{% capture sequence-img %}
+#### Display
 
 Sequence flows are displayed as single black lines with an arrow indicating the direction of flow.
 
-{% endcapture %}
-{% capture sequence-xml %}
+#### XML
 
 An example of the XML of a sequence flow is:
 
@@ -2646,19 +2960,13 @@ An example of the XML of a sequence flow with a condition expression set is:
 </bpmn2:sequenceFlow>
 ```
 
-{% endcapture %}
-
-{% include tabs.html tableid="sequence" opt1="Properties" content1=sequence-prop opt2="Appearance" content2=sequence-img opt3="XML" content3=sequence-xml %}
-
 ### Pools and lanes
 
 Pools allow multiple process definitions to be modeled in a single diagram, or to utilize lanes to show the personas interacting with a process defintion. An example of using two pools would be for a customer to fill out an order in one process definition that sends a message on order completion triggering a second process defintion for a warehouse team to action. The two processes would have two completely different process instance IDs at runtime but can be modeled on the same diagram to capture the business process in a single location.
 
 Lanes are used to display different personas interacting with a process definition to the modeler. They have no impact on a process at runtime. Lanes are sub-divisions of pools and cannot exist without them. They can also be nested for example to show different teams within a department.
 
-**Important**: The scope of [process variables]({% link process-automation/latest/model/processes/index.md %}#process-variables) are restricted to each process definition.
-
-{% capture pool-prop %}
+**Important**: The scope of [process variables](README.md#process-variables) are restricted to each process definition.
 
 #### Basic properties
 
@@ -2671,9 +2979,6 @@ The basic properties for a pool are:
 
 **Note**: Pools use the process definition name rather than having an additional name property.
 
-{% endcapture %}
-{% capture lane-prop %}
-
 #### Basic properties
 
 The basic properties for a lane are:
@@ -2684,8 +2989,7 @@ The basic properties for a lane are:
 | Name | *Optional.* The name of the lane. This will be displayed on the canvas. |
 | Documentation | *Optional.* A free text description of what the lane does. |
 
-{% endcapture %}
-{% capture pool-xml %}
+#### XML
 
 An example of the XML of a pool is:
 
@@ -2711,7 +3015,3 @@ An example of the XML of a lane is:
 		</bpmn2:lane>
 </bpmn2:laneSet>
 ```
-
-{% endcapture %}
-
-{% include tabs.html tableid="pools" opt1="Pools" content1=pool-prop opt2="Lanes" content2=lane-prop opt3="XML" content3=pool-xml %}
