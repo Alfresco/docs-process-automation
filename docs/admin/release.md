@@ -11,6 +11,7 @@ The **DevOps** section of the Admin Application is used to deploy projects and m
 The **Project Releases** section displays a list of all [released projects](../model/projects.md#release-a-project) created in the Modeling Application.
 
 **Note**: If you can't find your project in the list, make sure it has been released. To release a project:
+
     1. Sign into the Modeling Application.
     2. Find or search for your project in the list of projects.
     3. Select the **Release** action from the **Options** column for the project.
@@ -23,7 +24,7 @@ There are two options for deploying a released project. Both are available by se
 
 **Note**: Even if directly deploying a project, a deployment descriptor is still created.
 
-### Properties {#project-properties}
+### Properties
 
 The properties for a released project are:
 

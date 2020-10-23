@@ -99,7 +99,7 @@ Once the extended Digital Workspace has been fully customized and tested it can 
 
 The [Application Development Framework (ADF)](https://www.alfresco.com/abn/adf/docs/) can be used to develop a custom [end user interface](../model/interfaces.md) from scratch.
 
-### Setup {#custom-setup}
+### Setup
 
 The Yeoman generator can be used to develop custom user interfaces for Process Automation.
 
@@ -185,13 +185,13 @@ The Yeoman generator can be used to develop custom user interfaces for Process A
     }
     ```
 
-### Develop {#custom-develop}
+### Develop
 
 There are a set of [content components](https://www.alfresco.com/abn/adf/docs/content-services/) and a set of [process components](https://www.alfresco.com/abn/adf/docs/process-services-cloud/) that can be used to develop the custom user interface with. The content components can only be used if you selected the option **Content and Process Services with Activiti** when generating the application.
 
 **Note**: Process Automation uses the Process Services **Cloud** components.
 
-### Upload {#custom-upload}
+### Upload
 
 Once the custom interface has been fully developed and tested it can be deployed.
 

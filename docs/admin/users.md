@@ -10,7 +10,7 @@ The **Identity** section of the Admin Application is used to create and manage u
 
 The **Users** section displays the current list of users in the system.
 
-### Properties {#user-properties}
+### Properties
 
 The properties for users are:
 
@@ -44,7 +44,7 @@ The **Groups** section displays the current list of groups in the system.
 
 Groups are used to quickly assign multiple roles to users and for logically assigning permissions to applications with. They can also be used to create group assignments for [user tasks]({% link process-automation/latest/model/processes/bpmn.md %}#user-task).
 
-### Properties {#group-properties}
+### Properties
 
 The properties for groups are:
 
