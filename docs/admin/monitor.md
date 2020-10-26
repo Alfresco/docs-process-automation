@@ -1,5 +1,5 @@
 ---
-title: Process administration
+Title: Process administration
 ---
 
 # Process administration
@@ -132,9 +132,9 @@ Select the **Audit** option to view all audit logs for the selected task. This w
 
 ## Service tasks
 
-The **Services Tasks** section is for monitoring all [service tasks]({% link process-automation/latest/model/processes/bpmn.md %}#service-task) that are running in each application.
+The **Services Tasks** section is for monitoring all [service tasks](../model/processes/bpmn.md#service-task) that are running in each application.
 
-**Note**: This includes [connectors](../model/connectors/README.md), [decision tables](../model/decisions.md %}) and [scripts](../model/scripts.md).
+**Note**: This includes [connectors](../model/connectors/README.md), [decision tables](../model/decisions.md) and [scripts](../model/scripts.md).
 
 ### Properties
 
@@ -173,7 +173,7 @@ The properties for each audit event are:
 
 | Property | Description |
 | -------- | ----------- |
-| Event Type | The type of the event that occurred, for example `SEQUENCE_FLOW_TAKEN` shows where a [sequence flow]({% link process-automation/latest/model/processes/bpmn.md %}#sequence-flow) was followed. |
+| Event Type | The type of the event that occurred, for example `SEQUENCE_FLOW_TAKEN` shows where a [sequence flow](../model/processes/bpmn.md#sequence-flow) was followed. |
 | Event Time | The timestamp for when the event happened. |
 | Event ID | The unique ID of the event. |
 | Process Instance ID | The process instance ID of the process that the event occurred in. |

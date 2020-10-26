@@ -1,5 +1,5 @@
 ---
-title: Slack connector
+Title: Slack connector
 ---
 
 # Slack connector

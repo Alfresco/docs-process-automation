@@ -1,5 +1,5 @@
 ---
-title: Twilio connector
+Title: Twilio connector
 ---
 
 # Twilio connector

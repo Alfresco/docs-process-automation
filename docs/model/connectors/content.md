@@ -1,5 +1,5 @@
 ---
-title: Content connector 
+Title: Content connector 
 ---
 
 # Content connector
@@ -28,7 +28,7 @@ Content connectors are stored separately in the palette from other connectors. T
 
 ## Properties
 
-The content connector is implemented as a [service task]({% link process-automation/latest/model/processes/bpmn.md %}#service-task). All the properties available to a service task are those required by the content connector. The three most important ones to understand for the content connector are:
+The content connector is implemented as a [service task](../processes/bpmn.md#service-task). All the properties available to a service task are those required by the content connector. The three most important ones to understand for the content connector are:
 
 | Property | Description |
 | -------- | ----------- |

@@ -1,5 +1,5 @@
 ---
-title: User interfaces
+Title: User interfaces
 ---
 
 # User interfaces

@@ -1,5 +1,5 @@
 ---
-title: Admin overview
+Title: Admin overview
 ---
 
 # Admin overview

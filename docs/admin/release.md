@@ -1,5 +1,5 @@
 ---
-title: Project deployment
+Title: Project deployment
 --- 
 
 # Project deployment
@@ -59,7 +59,7 @@ Select a user or group to administer the application. The user or group must exi
 
 The users selected for an application are those able to start process instances and tasks for it.
 
-**Note**: Any users or groups that were assigned to [user tasks]({% link process-automation/latest/model/processes/bpmn.md %}#user-task) using the **Identity** method will already be entered in this field.
+**Note**: Any users or groups that were assigned to [user tasks](../model/processes/bpmn.md#user-task) using the **Identity** method will already be entered in this field.
 
 Select the users and groups that can access the application. The users and groups must exist and cannot be set as a static values.
 

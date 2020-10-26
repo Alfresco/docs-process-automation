@@ -1,5 +1,5 @@
 ---
-title: AWS connectors
+Title: AWS connectors
 ---
 
 # AWS connectors

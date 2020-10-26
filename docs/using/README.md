@@ -1,5 +1,5 @@
 ---
-title: Using Process Automation
+Title: Using Process Automation
 ---
 
 # Using Process Automation
@@ -58,7 +58,7 @@ To start a process instance:
 
 ### Start a process instance from a file
 
-Process instances can also be started from a file in the repository. If the process definition contains a [start event]({% link process-automation/latest/model/processes/bpmn.md %}#start-event) that contains a form with an [attach file field](../model/forms.md#attach-file-fields) then the content will be attached to the process as it is started.
+Process instances can also be started from a file in the repository. If the process definition contains a [start event](../model/processes/bpmn.md#start-event) that contains a form with an [attach file field](../model/forms.md#attach-file-fields) then the content will be attached to the process as it is started.
 
 1. Sign into the Digital Workspace.
 
@@ -130,7 +130,7 @@ The status of tasks are:
 
 ### Claim and release tasks
 
-Tasks that are assigned to a [candidate group]({% link process-automation/latest/model/processes/bpmn.md %}#user) can be claimed by an individual user to work on the task. Claiming a task will remove it from other candidates **Queued Tasks** list.
+Tasks that are assigned to a [candidate group](../model/processes/bpmn.md#user) can be claimed by an individual user to work on the task. Claiming a task will remove it from other candidates **Queued Tasks** list.
 
 To claim a task:
 

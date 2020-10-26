@@ -1,5 +1,5 @@
 ---
-title: DocuSign connector
+Title: DocuSign connector
 ---
 
 # DocuSign connector

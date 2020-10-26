@@ -1,5 +1,5 @@
 ---
-title: Email connector
+Title: Email connector
 ---
 
 # Email connector

@@ -1,5 +1,5 @@
 ---
-title: Overview of connectors
+Title: Overview of connectors
 ---
 
 # Overview of connectors
@@ -8,7 +8,7 @@ Connectors are used to handle interactions with external systems as part of a pr
 
 ## Properties
 
-Connectors are implemented as a [service task]({% link process-automation/latest/model/processes/bpmn.md %}#service-task). All the properties available to a service task are those required by a connector. The three most important ones to understand for connectors are:
+Connectors are implemented as a [service task](../processes/bpmn.md#service-task). All the properties available to a service task are those required by a connector. The three most important ones to understand for connectors are:
 
 | Property | Description |
 | -------- | ----------- |
@@ -42,7 +42,7 @@ Clicking on a connector instance will display its actions, events, configuration
 
 ### Actions
 
-Actions are the operations a connector can take, for example sending a message on Slack and creating a channel in Slack are two different actions. A connector instance can execute any number of actions, however each [service task]({% link process-automation/latest/model/processes/bpmn.md %}#service-task) can only execute one.
+Actions are the operations a connector can take, for example sending a message on Slack and creating a channel in Slack are two different actions. A connector instance can execute any number of actions, however each [service task](../processes/bpmn.md#service-task) can only execute one.
 
 Each action has a set of input parameters and output parameters. Input parameters are values sent from the process for the connector to execute, and output parameters are the values the connector sends back to the process after it has executed. The values sent as input and output parameters are defined using the **Mapping type** property on the service task and [process variables](../processes/README.md#process-variable-mapping).
 
@@ -173,7 +173,7 @@ An example of the JSON for the Slack connector **MESSAGE_RECEIVED** configuratio
 
 ### Errors
 
-Connectors have a set of errors defined in their configuration. These errors are thrown when the error occurs in the execution of a connector action and can be caught by [error boundary events]({% link process-automation/latest/model/processes/bpmn.md %}#error-boundary-event) or [error start events]({% link process-automation/latest/model/processes/bpmn.md %}#error-start-event). This allows connector errors to be handled as business errors.
+Connectors have a set of errors defined in their configuration. These errors are thrown when the error occurs in the execution of a connector action and can be caught by [error boundary events](../processes/bpmn.md#error-boundary-event) or [error start events](../processes/bpmn.md#error-start-event). This allows connector errors to be handled as business errors.
 
 When an error boundary event is attached to a service task that contains a connector, a list of errors that can be thrown by that connector can be selected as the `error` to catch. Error start events will see a list of errors from the connectors in the project.
 

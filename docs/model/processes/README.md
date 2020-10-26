@@ -1,5 +1,5 @@
 ---
-title: Overview of processes
+Title: Overview of processes
 ---
 
 # Overview of processes
@@ -8,7 +8,7 @@ Processes are the collection of components that are used to build and represent 
 
 There are three concepts associated with modeling processes to understand and differentiate between:
 
-* **Diagrams** are the container that process definitions are modeled in. A process diagram can contain multiple process definitions when [pools]({% link process-automation/latest/model/processes/bpmn.md %}#pools-and-lanes) are used to separate them.
+* **Diagrams** are the container that process definitions are modeled in. A process diagram can contain multiple process definitions when [pools](bpmn.md#pools-and-lanes) are used to separate them.
 
 * **Process definitions** are the templates that a process follows, made up of BPMN elements and sequence flows. A process definition describes the business logic that will be followed repeatedly at runtime.
 
@@ -57,7 +57,7 @@ The ID and name of a diagram are set as XML attributes of the `definitions` elem
 
 Process definitions are designed using [BPMN elements](bpmn.md) which in turn can reference other modeled components within a project such as forms, connectors and decision tables.
 
-A process definition is created when a diagram is created and it will share the same name as the diagram. Use the BPMN element [pools]({% link process-automation/latest/model/processes/bpmn.md %}#pools-and-lanes) to create separate process definitions within a diagram.
+A process definition is created when a diagram is created and it will share the same name as the diagram. Use the BPMN element [pools](bpmn.md#pools-and-lanes) to create separate process definitions within a diagram.
 
 ### Process definition properties
 
@@ -90,7 +90,7 @@ The **Diagram Editor** is the GUI for modeling processes by dragging and droppin
 | Tool | Description |
 | ---- | ----------- |
 | Hand | Use the hand tool to pan around the diagram and select elements to view their properties. |
-| Global connect | Use the global connect tool to draw [sequence flows]({% link process-automation/latest/model/processes/bpmn.md %}#sequence-flow) between elements on the diagram. |
+| Global connect | Use the global connect tool to draw [sequence flows](bpmn.md#sequence-flow) between elements on the diagram. |
 | Create/remove space | Use the create/remove space tool to move elements around the diagram. |
 | Lasso | Use the lasso tool to drag a box and select multiple elements on the diagram. |
 
@@ -109,13 +109,13 @@ The **Extensions Editor** is a JSON editor that stores any extensions made for p
 | constants | Constants are values that will not change for the duration of a process such as the service task implementation of a decision table. |
 | mappings | Mappings are the record of how variables are passed between the process and other models and BPMN elements such as user tasks, decision tables and scripts.  |
 | properties | Properties store the details of process variables. |
-| assignments | Assignments store the user and group assignations for [user tasks]({% link process-automation/latest/model/processes/bpmn.md %}#user-task). |
+| assignments | Assignments store the user and group assignations for [user tasks](bpmn.md#user-task). |
 
 ## Process variables
 
 Process variables are used to store values and pass them between BPMN elements throughout a process instance. For example, values entered into a form as part of a user task can be sent to process variables in the process, which in turn can send those values to a decision table to evaluate and choose the direction the process should take.
 
-The scope of process variables is restricted to a process definition and not to the diagram it is created in, which is important to consider when using multiple [pools]({% link process-automation/latest/model/processes/bpmn.md %}#pools-and-lanes).
+The scope of process variables is restricted to a process definition and not to the diagram it is created in, which is important to consider when using multiple [pools](bpmn.md#pools-and-lanes).
 
 ### Process variable properties
 
@@ -153,7 +153,7 @@ To create a process variable:
 2. Select **Edit Process Variables** against the correct process definition:
 
     * If the diagram contains only one process definition, make sure no BPMN element is selected by clicking on a blank section of the canvas and the **Edit Process Variables** button will be visible in the right-hand properties panel.
-    * If the diagram contains more than one process definition then click on the individual [pools]({% link process-automation/latest/model/processes/bpmn.md %}#pools-and-lanes) to view the **Edit Process Variables** button for each definition.
+    * If the diagram contains more than one process definition then click on the individual [pools](bpmn.md#pools-and-lanes) to view the **Edit Process Variables** button for each definition.
 
 3. Use the **+** symbol to add new variables and enter a name, type, optional value and select whether it is required or not.
 
@@ -172,7 +172,7 @@ To create a process variable:
 
 ### Process variable mapping
 
-**Mapping** is a property of BPMN elements such as [user tasks]({% link process-automation/latest/model/processes/bpmn.md %}#user-task), [service tasks]({% link process-automation/latest/model/processes/bpmn.md %}#service-task) and [script tasks]({% link process-automation/latest/model/processes/bpmn.md %}#script-task). It describes how data should be passed between a process and models such as forms, connectors, and scripts in a process. The data can be passed to variables within those models, such as form variables and script variables or other values in the model such as form fields, connector inputs and outputs and decision table inputs and outputs. Mapping this data is split between input mappings and output mappings:
+**Mapping** is a property of BPMN elements such as [user tasks](bpmn.md#user-task), [service tasks](bpmn.md#service-task) and [script tasks](bpmn.md#script-task). It describes how data should be passed between a process and models such as forms, connectors, and scripts in a process. The data can be passed to variables within those models, such as form variables and script variables or other values in the model such as form fields, connector inputs and outputs and decision table inputs and outputs. Mapping this data is split between input mappings and output mappings:
 
 * Input mapping sets how and which data is sent from process variables to another model within the process.
 
@@ -270,7 +270,7 @@ To manage all errors in a diagram:
 
 * Make sure no BPMN element is selected by clicking on a blank section of the canvas and the **Edit Errors** button will be visible in the right-hand properties panel.
 
-* If the diagram contains more than one process definition then clicking on the individual [pools]({% link process-automation/latest/model/processes/bpmn.md %}#pools-and-lanes) will also show the **Edit Errors** button.
+* If the diagram contains more than one process definition then clicking on the individual [pools](bpmn.md#pools-and-lanes) will also show the **Edit Errors** button.
 
 ## Messages
 
@@ -280,7 +280,7 @@ To manage all messages in a diagram:
 
 * Make sure no BPMN element is selected by clicking on a blank section of the canvas and the **Edit Messages** button will be visible in the right-hand properties panel.
 
-* If the diagram contains more than one process definition then clicking on the individual [pools]({% link process-automation/latest/model/processes/bpmn.md %}#pools-and-lanes) will also show the **Edit Messages** button.
+* If the diagram contains more than one process definition then clicking on the individual [pools](bpmn.md#pools-and-lanes) will also show the **Edit Messages** button.
 
 ## Actions
 

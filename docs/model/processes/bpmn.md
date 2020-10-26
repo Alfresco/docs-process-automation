@@ -1,5 +1,5 @@
 ---
-title: BPMN
+Title: BPMN
 ---
 
 # BPMN

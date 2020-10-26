@@ -1,5 +1,5 @@
 ---
-title: Users and groups
+Title: Users and groups
 ---
 
 # Users and groups
@@ -42,7 +42,7 @@ Once the user has been created, **Edit** the user to assign groups and roles to 
 
 The **Groups** section displays the current list of groups in the system.
 
-Groups are used to quickly assign multiple roles to users and for logically assigning permissions to applications with. They can also be used to create group assignments for [user tasks]({% link process-automation/latest/model/processes/bpmn.md %}#user-task).
+Groups are used to quickly assign multiple roles to users and for logically assigning permissions to applications with. They can also be used to create group assignments for [user tasks](../model/processes/bpmn.md#user-task).
 
 ### Properties
 

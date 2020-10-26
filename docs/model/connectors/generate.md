@@ -1,5 +1,5 @@
 ---
-title: Generate document
+Title: Generate document
 ---
 
 # Generate document
@@ -28,7 +28,7 @@ The generate document connector is stored in the palette separate from other con
 
 ## Properties
 
-The generate document connector is implemented as a [service task]({% link process-automation/latest/model/processes/bpmn.md %}#service-task). All the properties available to a service task are those required by the generate document connector. The three most important ones to understand for the generate document connector are:
+The generate document connector is implemented as a [service task](../processes/bpmn.md#service-task). All the properties available to a service task are those required by the generate document connector. The three most important ones to understand for the generate document connector are:
 
 | Property | Description |
 | -------- | ----------- |

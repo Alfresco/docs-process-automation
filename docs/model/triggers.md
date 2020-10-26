@@ -1,5 +1,5 @@
 ---
-title: Triggers
+Title: Triggers
 ---
 
 # Triggers
@@ -201,7 +201,7 @@ The action to start a process will begin a process instance when the event crite
 
 ### Send a signal
 
-The action to send a signal will send a named signal of global scope when an event criteria are met. The signal can be caught by the catching signal events [signal start events]({% link process-automation/latest/model/processes/bpmn.md %}#signal-start-event), [signal intermediate catch events]({% link process-automation/latest/model/processes/bpmn.md %}#signal-intermediate-catch-event) and [signal boundary events]({% link process-automation/latest/model/processes/bpmn.md %}#signal-boundary-event). The payload for the send signal action is:
+The action to send a signal will send a named signal of global scope when an event criteria are met. The signal can be caught by the catching signal events [signal start events](processes/bpmn.md#signal-start-event), [signal intermediate catch events](processes/bpmn.md#signal-intermediate-catch-event) and [signal boundary events](processes/bpmn.md#signal-boundary-event). The payload for the send signal action is:
 
 | Property | Description |
 | -------- | ----------- |
@@ -211,18 +211,18 @@ The action to send a signal will send a named signal of global scope when an eve
 
 ### Receive a message
 
-The action to receive a message will send a named message when an event criteria are met. The message can be caught by the message catching events [message intermediate catch events]({% link process-automation/latest/model/processes/bpmn.md %}#message-intermediate-catch-event) and [message boundary events]({% link process-automation/latest/model/processes/bpmn.md %}#message-boundary-event). The payload for the receive message action is:
+The action to receive a message will send a named message when an event criteria are met. The message can be caught by the message catching events [message intermediate catch events](processes/bpmn.md#message-intermediate-catch-event) and [message boundary events](processes/bpmn.md#message-boundary-event). The payload for the receive message action is:
 
 | Property | Description |
 | -------- | ----------- |
 | name | *Required.* The name of the message to send, for example `Message_077epax`. |
-| correlationKey | *Required.* A [correlation key]({% link process-automation/latest/model/processes/bpmn.md %}#message-int-cat/message) must be provided when sending a message from a trigger, for example `014-245`. |
+| correlationKey | *Required.* A [correlation key](processes/bpmn.md#message-int-cat/message) must be provided when sending a message from a trigger, for example `014-245`. |
 | payloadType | *Required.* The type of payload. This is set to `ReceiveMessagePayload` and cannot be changed. |
 | variables | *Optional.* Values from the trigger event can be sent as part of the message payload. |
 
 ### Send a start message
 
-The action to send a start message will send a named message when an event criteria are met. The message can be caught by a [message start event]({% link process-automation/latest/model/processes/bpmn.md %}#message-start-event) to start a process instance. The payload for the start message action is:
+The action to send a start message will send a named message when an event criteria are met. The message can be caught by a [message start event](processes/bpmn.md#message-start-event) to start a process instance. The payload for the start message action is:
 
 | Property | Description |
 | -------- | ----------- |

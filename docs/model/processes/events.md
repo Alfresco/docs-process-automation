@@ -1,5 +1,5 @@
 ---
-title: Engine events
+Title: Engine events
 ---
 
 # Engine events
@@ -70,10 +70,10 @@ The event properties are:
 | SEQUENCE_FLOW_TAKEN | A sequence flow between two activities has been taken. |
 | START_MESSAGE_DEPLOYED | A start message event is waiting to catch a message. Similar to `MESSAGE_WAITING` but specific to start message events. |
 | MESSAGE_SUBSCRIPTION_CANCELLED | A message event subscription entity has been deleted. For example, if a process instance is deleted that had an active catch message event activity. |
-| TASK_CREATED | A task has been created. Note that [service tasks]({% link process-automation/latest/model/processes/bpmn.md %}#service-task) do not emit a `TASK_CREATED` event. The `INTEGRATION_REQUESTED` event should be monitored to report or track service tasks. |
+| TASK_CREATED | A task has been created. Note that [service tasks](bpmn.md#service-task) do not emit a `TASK_CREATED` event. The `INTEGRATION_REQUESTED` event should be monitored to report or track service tasks. |
 | TASK_UPDATED | A task has been updated. |
 | TASK_ASSIGNED | A task has been assigned. |
-| TASK_COMPLETED | A task has been completed. Note that [service tasks]({% link process-automation/latest/model/processes/bpmn.md %}#service-task) do not emit a `TASK_COMPLETED` event. The `INTEGRATION_RESULT_RECEIVED` event should be monitored to report or track service tasks. |
+| TASK_COMPLETED | A task has been completed. Note that [service tasks](bpmn.mdservice-task) do not emit a `TASK_COMPLETED` event. The `INTEGRATION_RESULT_RECEIVED` event should be monitored to report or track service tasks. |
 | TASK_SUSPENDED | A task has been suspended. |
 | TASK_ACTIVATED | A previously suspended task has been reactivated. |
 | TASK_CANCELLED | A task has been cancelled. |

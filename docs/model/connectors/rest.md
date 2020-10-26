@@ -1,5 +1,5 @@
 ---
-title: REST connector
+Title: REST connector
 ---
 
 # REST connector

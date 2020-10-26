@@ -1,5 +1,5 @@
 ---
-title: Alfresco Process Automation
+Title: Alfresco Process Automation
 ---
 
 # Alfresco Process Automation

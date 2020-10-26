@@ -1,5 +1,5 @@
 ---
-title: Scripts
+Title: Scripts
 ---
 
 # Scripts
@@ -8,7 +8,7 @@ Scripts are used to execute a script as part of a process. Process variables can
 
 Script design uses the functionality of [Monaco](https://github.com/Microsoft/monaco-editor) and uses the [Graal javascript engine](https://github.com/graalvm/graaljs) for execution.
 
-Scripts are added to a process definition using a [script task]({% link process-automation/latest/model/processes/bpmn.md %}#script-task).
+Scripts are added to a process definition using a [script task](processes/bpmn.md#script-task).
 
 ## Properties
 

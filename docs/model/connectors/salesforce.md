@@ -1,5 +1,5 @@
 ---
-title: Salesforce connector
+Title: Salesforce connector
 ---
 
 # Salesforce connector

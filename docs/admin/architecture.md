@@ -1,5 +1,5 @@
 ---
-title: Architecture
+Title: Architecture
 ---
 
 # Architecture
