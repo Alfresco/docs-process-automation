@@ -3,7 +3,7 @@
     children:
         - projects.md: 'Projects'
         - processes:
-            title: 'Projects'
+            title: 'Processes'
             children:
               - bpmn.md: 'BPMN'
               - events.md: 'Engine events'
