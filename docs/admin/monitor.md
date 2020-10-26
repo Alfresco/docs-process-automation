@@ -132,7 +132,7 @@ Select the **Audit** option to view all audit logs for the selected task. This w
 
 ## Service tasks
 
-The **Services Tasks** section is for monitoring all [service tasks](../model/processes/bpmn.md#service-task) that are running in each application.
+The **Service Tasks** section is for monitoring all [service tasks](../model/processes/bpmn.md#service-task) that are running in each application.
 
 **Note**: This includes [connectors](../model/connectors/README.md), [decision tables](../model/decisions.md) and [scripts](../model/scripts.md).
 

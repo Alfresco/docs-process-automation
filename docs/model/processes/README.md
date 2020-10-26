@@ -1,5 +1,5 @@
 ---
-Title: Overview of processes
+Title: Processes
 ---
 
 # Overview of processes
@@ -198,7 +198,7 @@ If **Map variables** is selected as the **Mapping** type, there are three ways o
 
 * **Expressions**: Expressions can be entered using a JSON editor to create more complex mappings such as mapping JSON process variables to input and output parameters. For example, using `${temperature.celsius}` will use the value for the object `celsius`.
 
-	In the following example this would result in a value of `16`:
+In the following example this would result in a value of `16`:
 
 	```json
 	{

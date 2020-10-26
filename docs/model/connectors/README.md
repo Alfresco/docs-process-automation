@@ -1,5 +1,5 @@
 ---
-Title: Overview of connectors
+Title: Connectors
 ---
 
 # Overview of connectors

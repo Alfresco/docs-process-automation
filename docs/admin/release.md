@@ -12,9 +12,9 @@ The **Project Releases** section displays a list of all [released projects](../m
 
 **Note**: If you can't find your project in the list, make sure it has been released. To release a project:
 
-    1. Sign into the Modeling Application.
-    2. Find or search for your project in the list of projects.
-    3. Select the **Release** action from the **Options** column for the project.
+1. Sign into the Modeling Application.
+2. Find or search for your project in the list of projects.
+3. Select the **Release** action from the **Options** column for the project.
 
 There are two options for deploying a released project. Both are available by selecting the options against a released project:
 
@@ -53,7 +53,7 @@ All projects require an application name for when they are deployed.
 
 All applications require at least one administrator to manage the application. Administrators have access to the [Process Admin](monitor.md) actions for an application.
 
-Select a user or group to administer the application. The user or group must exist and cannot be set as a static value.
+Select a user or group to administer the application. The user or group must exist and cannot be set as static values.
 
 #### User access
 
@@ -65,7 +65,7 @@ Select the users and groups that can access the application. The users and group
 
 #### Connectors
 
-**Note**: If there are no [connectors](../model/connectors/README.md) in the project being deployed this tab will not show.
+**Note**: This tab will not appear if there are no [connectors](../model/connectors/README.md) in the project being deployed.
 
 Applications that contain connectors need to have their [configuration parameters](../model/connectors/README.md#configuration-parameters) set.
 

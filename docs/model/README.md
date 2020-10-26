@@ -1,5 +1,5 @@
 ---
-Title: Modeling overview
+Title: Model
 ---
 
 # Modeling overview
