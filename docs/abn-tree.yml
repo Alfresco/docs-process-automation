@@ -27,11 +27,11 @@
         - triggers.md: 'Triggers'
         - content-models.md: 'Content models'
 - admin:
-  title: 'Administer'
-  children:
-    - release.md: 'Project deployment'
-    - monitor.md: 'Process administration'
-    - users.md: 'Users and groups'
-    - architecture.md: 'Architecture'
+    title: 'Administer'
+    children:
+      - release.md: 'Project deployment'
+      - monitor.md: 'Process administration'
+      - users.md: 'Users and groups'
+      - architecture.md: 'Architecture'
 - using: 'Using'
 - develop: 'Develop'
