@@ -83,7 +83,7 @@ SET flavor = {type}
 WHERE flavor = "mint-choc";
 ```
 
-> **Note:** The `{ }` are declared without quotations.
+**Note:** The `{ }` are declared without quotations.
 
 The output parameters from an update statement are:
 
