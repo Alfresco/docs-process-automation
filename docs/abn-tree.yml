@@ -16,6 +16,7 @@
               - docusign.md: 'DocuSign'
               - email.md: 'Email'
               - rest.md: 'REST'
+              - database.md: 'Database'
               - aws.md: 'Amazon Web Services'
               - slack.md: 'Slack'
               - twilio.md: 'Twilio'

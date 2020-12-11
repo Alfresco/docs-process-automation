@@ -20,7 +20,7 @@ Models are the components that make up a [project](projects.md). The types of mo
 * [Forms](forms.md) are used to capture data into specially designed field types such as text, date, file uploads and multiple choice radio buttons. They are filled in by users of an application.
 * [Connectors](connectors/README.md) are used to handle interactions with external systems as part of a process. This includes actions such as retrieving, generating, updating and storing content in the Content Services repository, sending emails and utilizing services such as AWS Comprehend, Textract, Rekognition and Lambda functions.
 * [Decision tables](decisions.md) are used to manage business decisions within process workflows.
-* [User interfaces](interfaces.md) set the end-user interface for users to interact with content, tasks and processes for the project.
+* [User interfaces](interfaces.md) set the end user interface for users to interact with content, tasks and processes for the project.
 * [Scripts](scripts.md) are used to execute a custom script as part of a process
 * [Triggers](triggers.md) are used to define a set of event criteria. When the event criteria specified in the trigger is met, the event is published and an action containing a payload is kicked off.
 * [Content models](content-models.md) describe how data should be stored in the repository and the metadata that can be associated to the content and folders within that model.
