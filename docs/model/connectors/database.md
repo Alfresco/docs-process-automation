@@ -2,6 +2,8 @@
 Title: Database connectors
 ---
 
+# Database connectors
+
 There are three database connectors that can be used to execute queries against:
 
 * [MariaDB](#mariadb)
